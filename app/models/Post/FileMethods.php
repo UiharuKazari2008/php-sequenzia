@@ -12,6 +12,8 @@ trait PostFileMethods
         'image/jpg'  => 'jpg',
         'image/png'  => 'png',
         'image/gif'  => 'gif',
+        'video/webm' => 'webm',
+        'video/mp4'  => 'mp4',
         'application/x-shockwave-flash' => 'swf'
     ];
     
@@ -331,9 +333,12 @@ trait PostFileMethods
         
         $this->tempfile_name = pathinfo($this->tempfile_name, PATHINFO_FILENAME);
         
-        list ($x, $y, $type) = getimagesize($this->tempfile_path());
-        
-        $this->mime_type = image_type_to_mime_type($type);
+       // list ($x, $y, $type) = getimagesize($this->tempfile_path());
+       // $this->mime_type = image_type_to_mime_type($type);
+        list ($x, $y) = getimagesize($this->tempfile_path());
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $this->mime_type = finfo_file($finfo, $this->tempfile_path());
+        finfo_close($finfo);
     }
     
     # Assigns a CGI file to the post. This writes the file to disk and generates a unique file name.
@@ -414,6 +419,10 @@ trait PostFileMethods
         return $this->file_ext == "swf";
     }
     
+    public function video()
+    {
+        return in_array($this->file_ext, array('mp4', 'webm'));
+    }
     public function gif()
     {
         return $this->file_ext == 'gif';

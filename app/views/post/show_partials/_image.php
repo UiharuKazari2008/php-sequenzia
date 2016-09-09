@@ -30,6 +30,13 @@
       </object>
 
       <p><?= $this->linkTo($this->t('post_flash_dl'), $this->post->file_url()) ?></p>
+    <?php elseif ($this->post->video()) : ?>
+      <div>
+        <video controls="true" autoplay="true" loop="true" >
+          <source src="<?= $this->post->file_url() ?>" type="video/mp4">
+          Your browser does not support webm video.
+        </video>
+      </div>
     <?php else: ?>
       <h2><a href="<?= $this->post->file_url() ?>"><?= $this->t('post_download') ?></a></h2>
       <p><?= $this->t('post_download_text') ?></p>
