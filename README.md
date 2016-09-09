@@ -21,7 +21,7 @@ MyImouto development stopped around 2014. By then, the port was mostly complete,
 
 ## Installation
 
-For an explained, step-by-step guide, please check the [How to Install (Decentralized)](https://acr.moe/index.php/Build_a_Sequenzia_Booru) or [How to Install (Centralized)](https://acr.moe/index.php/Build_a_Sequenzia_Booru) guide. Otherwise, here's the quick guide for advanced users:
+For an explained, step-by-step guide, please check the [How to Install (Decentralized)](https://acr.moe/index.php/Build_a_Sequenzia_Booru) or [How to Install (Centralized)](https://code.acr.moe/kazari/myimouto/wikis/ubuntu-centralized-installation-guide) guide. Otherwise, here's the quick guide for advanced users:
 
   * Install system dependencies: `composer install`.
   * Create a database for the booru.
