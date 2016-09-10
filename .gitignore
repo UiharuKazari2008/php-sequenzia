@@ -5,8 +5,8 @@
 /public/data
 /tmp/*
 /vendor/*
+/composer.lock
 !/vendor/assets
 !/vendor/Horde
 !/vendor/ZipStream.php
 !/vendor/htmLawed
-
