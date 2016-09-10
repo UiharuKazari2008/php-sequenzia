@@ -1,0 +1,2 @@
+Please create a new branch when ever you want to make a contribution as i use automated pull on all my nodes to keep them up-to-date.
+You are free to do anything you would like to the project but you must get my approval before you can merge to my branch.
