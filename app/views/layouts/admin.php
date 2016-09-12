@@ -2,7 +2,7 @@
   <div id="header">
     <div id="title">
       <h2 id="site-title">
-        <?= $this->linkTo($this->imageTag('/images/logo_small.png', ['alt' => CONFIG()->app_name, 'size' => '484x75', 'id' => 'logo']), $this->rootPath()) ?>
+        <?= $this->linkTo($this->imageTag('/images/logo_small.png', ['alt' => CONFIG()->app_name, 'size' => '521x75', 'id' => 'logo']), $this->rootPath()) ?>
       </h2>
     </div>
     <?= $this->partial('layouts/menu') ?>
