@@ -52,13 +52,13 @@
   }
 
   var $      = jQuery;
-  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC! \n This site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site. \n Content such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
-  var accept = 'Accept';
-  var cancel = 'Cancel';
+  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC! \nThis site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site. \n\nContent such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
+  var accept = 'YYES, I fully understand what content I will see!';
+  var cancel = 'EXIT, Take me to somewhere normal';
 
   var container = $('<div>')
     .css({
-      backgroundColor: 'rgba(0,0,0,0.8)',
+      backgroundColor: 'rgba(66, 0, 0, 0.96)',
       width: '100%',
       height: '100%',
       position: 'absolute',
@@ -80,7 +80,7 @@
         .append(
           $('<div>')
             .css({
-              backgroundColor: 'white',
+              backgroundColor: #a90000,
               display: 'flex',
               padding: 8,
               minWidth: 350,
@@ -90,7 +90,7 @@
               $('<div>')
                 .css({
                   margin: 8,
-                  color: 'black'
+                  color: 'white'
                 })
                 .html(notice)
             )
@@ -115,7 +115,7 @@
                   $('<button>')
                     .html(cancel)
                     .click(function() {
-                      window.location.href = 'about:blank';
+                      window.location.href = 'https://plus.google.com/u/1/communities/114928521647105863223';
                     })
                 )
             )
