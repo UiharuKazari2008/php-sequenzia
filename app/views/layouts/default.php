@@ -80,7 +80,7 @@
         .append(
           $('<div>')
             .css({
-              backgroundColor: #a90000,
+              backgroundColor: '#a90000',
               display: 'flex',
               padding: 8,
               minWidth: 350,
@@ -91,6 +91,7 @@
                 .css({
                   margin: 8,
                   color: 'white'
+				  white-space: pre-wrap
                 })
                 .html(notice)
             )
