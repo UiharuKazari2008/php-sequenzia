@@ -1104,12 +1104,12 @@ input {
 	margin: 4px 4px 4px 0;
     border-color: darkred; 
 }
-HTML.webkit input[type=file] { color: #FFF }
+ { color: #FFF }
 input[type=text]:focus,input[type=password]:focus  {
     background: #401212;
     color: #d8d1d1;
 }
-input[type=button],input[type=submit],input[type=checkbox] {
+input[type=button],input[type=submit],HTML.webkit input[type=file] {
     background: darkred;
     color: #b39393;
 }
