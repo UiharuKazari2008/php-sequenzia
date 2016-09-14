@@ -1095,15 +1095,23 @@ img {
     border: 0;
     vertical-align: middle;
 }
-input { padding: 0 .3em }
-HTML.webkit input[type=file] { color: #FFF }
-input[type=password]:focus {
-    background: #FFC;
-    color: #000;
+input { 
+	padding: 0.2em;
+    background: transparent;
+    color: #b39393;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+	margin: 4px 4px 4px 0;
+    border-color: darkred; 
 }
-input[type=text]:focus {
-    background: #FFC;
-    color: #000;
+ { color: #FFF }
+input[type=text]:focus,input[type=password]:focus  {
+    background: #401212;
+    color: #d8d1d1;
+}
+input[type=button],input[type=submit],HTML.webkit input[type=file] {
+    background: darkred;
+    color: #b39393;
 }
 label {
     font-weight: bold;
@@ -1148,11 +1156,11 @@ table.form { width: 70em }
         padding: 0;
     }
     table.form th {
-        color: white;
+        color: #c7b5b5;
         white-space: normal;
         padding-right: 1em;
         text-align: right;
-        background: #333;
+        background: #2b1818;
     }
 table.highlightable>tbody>tr:hover { background: #67100f }
 table.highlightable th { margin: 0 }
@@ -1184,11 +1192,16 @@ textarea {
     padding: 0 .3em;
     font-family: sans-serif;
     font-size: 1.2em;
+	background: transparent;
+    color: #b39393;
+    border-style: solid;
+    border-width: 1px;
+    border-color: darkred;
 }
 textarea.no-block { display: inline }
 textarea:focus {
-    background: #FFC;
-    color: #000;
+    background: #401212;
+    color: #d8d1d1;
 }
 ul { margin: 0 0 1em 0 }
 ul.bare-list li { list-style-type: none }

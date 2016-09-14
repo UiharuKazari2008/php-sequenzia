@@ -24,7 +24,7 @@
       <h5><?= $this->t('.mode') ?></h5>
       <form onsubmit="return false;" action="">
         <div>
-          <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em;">
+          <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
             <option value="view"><?= $this->t('.mode_form.view') ?></option>
             <option value="edit"><?= $this->t('.mode_form.edit') ?></option>
 <!--            <option value="rating-s">Rate safe</option>
