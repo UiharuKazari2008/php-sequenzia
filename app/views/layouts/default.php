@@ -84,14 +84,14 @@
               display: 'flex',
               padding: 8,
               minWidth: 350,
-              flexDirection: 'column'
+              flexDirection: 'column',
             })
             .append(
               $('<div>')
                 .css({
                   margin: 8,
-                  color: 'white'
-				  white-space: pre-wrap
+                  color: 'white',
+				  white-space: pre-wrap,
                 })
                 .html(notice)
             )
