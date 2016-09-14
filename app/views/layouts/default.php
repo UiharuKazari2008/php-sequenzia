@@ -90,7 +90,8 @@
               $('<div>')
                 .css({
                   margin: 8,
-                  color: 'black'
+                  color: 'black',
+				  white-space: pre-wrap,
                 })
                 .html(notice)
             )
