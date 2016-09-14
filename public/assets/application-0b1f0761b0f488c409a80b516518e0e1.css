@@ -1096,7 +1096,7 @@ img {
     vertical-align: middle;
 }
 input { 
-	padding: 0 0 .2em 0;
+	padding: 0.2em;
     background: transparent;
     color: #b39393;
     border-style: solid;
@@ -1105,17 +1105,13 @@ input {
     border-color: darkred; 
 }
 HTML.webkit input[type=file] { color: #FFF }
-input[type=password]:focus {
+input[type=text]:focus,input[type=password]:focus  {
     background: #401212;
     color: #d8d1d1;
 }
-input[type=text]:focus {
-    background: #401212;
-    color: #d8d1d1;
-}
-input[type=button] {
-    background: #d8d1d1;
-    color: #401212;
+input[type=button],input[type=submit] {
+    background: darkred;
+    color: #b39393;
 }
 label {
     font-weight: bold;
