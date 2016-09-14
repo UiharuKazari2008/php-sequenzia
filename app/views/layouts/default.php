@@ -44,89 +44,88 @@
 </head>
 <body>
 	<script>
-	(function() {
-	  var cookieName = 'disclaimer_accepted';
+(function() {
+  var cookieName = 'disclaimer_accepted';
 
-	  if (Cookie.get(cookieName)) { 
-		return; 
-	  }
+  if (Cookie.get(cookieName)) {
+    return;
+  }
 
-	  var $      = jQuery;
-	  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC! \n This site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site. \n Content such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
-	  var accept = 'Accept';
-	  var cancel = 'Cancel';
+  var $      = jQuery;
+  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC! \n This site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site. \n Content such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
+  var accept = 'Accept';
+  var cancel = 'Cancel';
 
-	  var container = $('<div>')
-		.css({
-		  backgroundColor: 'rgba(0,0,0,0.8)',
-		  width: '100%',
-		  height: '100%',
-		  position: 'absolute',
-		  left: 0,
-		  top: 0,
-		  zIndex: 999,
-		});
+  var container = $('<div>')
+    .css({
+      backgroundColor: 'rgba(0,0,0,0.8)',
+      width: '100%',
+      height: '100%',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      zIndex: 999,
+    });
 
-	  container
-		.append(
-		  $('<div>')
-			.css({
-			  display: 'flex',
-			  width: '100%',
-			  height: '100%',
-			  justifyContent: 'center',
-			  alignItems: 'center',
-			})
-			.append(
-			  $('<div>')
-				.css({
-				  backgroundColor: #bf5e65,
-				  display: 'flex',
-				  padding: 8,
-				  minWidth: 350,
-				  flexDirection: 'column'
-				})
-				.append(
-				  $('<div>')
-					.css({
-					  margin: 8,
-					  color: 'white'
-					  white-space: pre-wrap
-					})
-					.html(notice)
-				)
-				.append(
-				  $('<div>')
-					.css({
-					  margin: 8,
-					  textAlign: 'right'
-					})
-					.append(
-					  $('<button>')
-						.css({
-						  marginRight: 5
-						})
-						.html(accept)
-						.click(function() {
-						  Cookie.put(cookieName, true);
-						  container.remove();
-						})
-					)
-					.append(
-					  $('<button>')
-						.html(cancel)
-						.click(function() {
-						  window.location.href = 'about:blank';
-						})
-					)
-				)
-			)
-		)
-		.prependTo(
-		  $('body')
-		)
-	})();
-	</script>
+  container
+    .append(
+      $('<div>')
+        .css({
+          display: 'flex',
+          width: '100%',
+          height: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        })
+        .append(
+          $('<div>')
+            .css({
+              backgroundColor: 'white',
+              display: 'flex',
+              padding: 8,
+              minWidth: 350,
+              flexDirection: 'column'
+            })
+            .append(
+              $('<div>')
+                .css({
+                  margin: 8,
+                  color: 'black'
+                })
+                .html(notice)
+            )
+            .append(
+              $('<div>')
+                .css({
+                  margin: 8,
+                  textAlign: 'right'
+                })
+                .append(
+                  $('<button>')
+                    .css({
+                      marginRight: 5
+                    })
+                    .html(accept)
+                    .click(function() {
+                      Cookie.put(cookieName, true);
+                      container.remove();
+                    })
+                )
+                .append(
+                  $('<button>')
+                    .html(cancel)
+                    .click(function() {
+                      window.location.href = 'about:blank';
+                    })
+                )
+            )
+        )
+    )
+    .prependTo(
+      $('body')
+    )
+})();
+</script>
   <?= $this->partial('layouts/news') ?>
   <div id="header">
     <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '389x40', 'id' => 'logo')), CONFIG()->url_base) ?><span><?= $this->tag_header($this->h($this->params()->tags)) ?></span></h2></div>
