@@ -825,6 +825,7 @@ en:
         title: History
       image:
         denied: You need a privileged account to see this image
+        text: You need an account to see this image or wait till an OPEN ACCESS day
         download:
           _: Download
           info: You must download this file manually.
