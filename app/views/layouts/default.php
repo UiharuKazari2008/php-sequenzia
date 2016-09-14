@@ -52,9 +52,9 @@
   }
 
   var $      = jQuery;
-  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC! \
-  This site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site. \
-  Content such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
+  var notice1 = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC!'
+  var notice2 = 'This site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site.'
+  var notice3 = 'Content such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
   var accept = 'YES, I fully understand what content I will see!';
   var cancel = 'EXIT, Take me to somewhere normal';
 
@@ -95,7 +95,9 @@ container
                   color: 'white',
 				  
                 })
-                .html(notice)
+                .html(notice1)
+				.html(notice2)
+				.html(notice3)
             )
             .append(
               $('<div>')
