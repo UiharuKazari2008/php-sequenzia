@@ -43,9 +43,96 @@
   <?php // echo csrf_meta_tag ?>
 </head>
 <body>
+	<script>
+(function() {
+  var cookieName = 'disclaimer_accepted';
+
+  if (Cookie.get(cookieName)) {
+    return;
+  }
+
+  var $      = jQuery;
+  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC!\nThis site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site.\nContent such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
+  
+  notice = notice.replace(/\n/g, "<br />");
+  var accept = 'YES, I fully understand what content I will see!';
+  var cancel = 'EXIT, Take me to somewhere normal';
+
+  var container = $('<div>')
+    .css({
+      backgroundColor: 'rgba(66, 0, 0, 0.96)',
+      width: '100%',
+      height: '100%',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      zIndex: 999,
+    });
+
+container
+    .append(
+      $('<div>')
+        .css({
+          display: 'flex',
+          width: '100%',
+          height: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        })
+        .append(
+          $('<div>')
+            .css({
+              backgroundColor: '#a90000',
+              display: 'flex',
+              padding: 8,
+              minWidth: 350,
+              flexDirection: 'column',
+            })
+            .append(
+              $('<div>')
+                .css({
+                  margin: 8,
+                  color: 'white',
+				  
+                })
+                .html(notice)
+            )
+            .append(
+              $('<div>')
+                .css({
+                  margin: 8,
+                  textAlign: 'right'
+                })
+                .append(
+                  $('<button>')
+                    .css({
+                      marginRight: 5
+                    })
+                    .html(accept)
+                    .click(function() {
+                      Cookie.put(cookieName, true);
+                      container.remove();
+                    })
+                )
+                .append(
+                  $('<button>')
+                    .html(cancel)
+                    .click(function() {
+                      window.location.href = 'https://plus.google.com/u/1/communities/114928521647105863223';
+                    })
+                )
+            )
+        )
+    )
+    .prependTo(
+      $('body')
+    )
+
+})();
+</script>
   <?= $this->partial('layouts/news') ?>
   <div id="header">
-    <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '521x75', 'id' => 'logo')), CONFIG()->url_base) ?><span><?= $this->tag_header($this->h($this->params()->tags)) ?></span></h2></div>
+    <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '389x40', 'id' => 'logo')), CONFIG()->url_base) ?><span><?= $this->tag_header($this->h($this->params()->tags)) ?></span></h2></div>
     <?= $this->partial('layouts/menu') ?>
   </div>
   <?= $this->partial('layouts/login') ?>
