@@ -1109,7 +1109,7 @@ input[type=text]:focus,input[type=password]:focus  {
     background: #401212;
     color: #d8d1d1;
 }
-input[type=button],input[type=submit] {
+input[type=button],input[type=submit],input[type=checkbox] {
     background: darkred;
     color: #b39393;
 }
@@ -1156,11 +1156,11 @@ table.form { width: 70em }
         padding: 0;
     }
     table.form th {
-        color: white;
+        color: #c7b5b5;
         white-space: normal;
         padding-right: 1em;
         text-align: right;
-        background: #333;
+        background: #2b1818;
     }
 table.highlightable>tbody>tr:hover { background: #67100f }
 table.highlightable th { margin: 0 }
