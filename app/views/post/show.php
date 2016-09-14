@@ -24,7 +24,7 @@
     <?= $this->partial('vertical') ?>
   <?php endif ?>
     </div>
-    <div class="content" id="right-col">
+    <div class="content content-post" id="right-col">
       <?php if (CONFIG()->can_show_ad('post#show-top', current_user())) : ?>
         <?= $this->partial('horizontal', ['position' => 'top']) ?>
       <?php endif ?>
