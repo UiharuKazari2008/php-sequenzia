@@ -87,7 +87,7 @@
               flexDirection: 'column'
             })
             .append(
-              $('<div>').css({ margin: 8, color: 'black'}).css({"white-space: pre-wrap"}).html(notice)
+              $('<div>').css({ 'margin: 8, color: 'black', white-space: pre-wrap'}).html(notice)
             )
             .append(
               $('<div>')
