@@ -25,7 +25,7 @@
 			  <?php endif ?>
 			<?php endif ?>
 		<?= $this->linkTo('Options ■', '#', ['class' => 'submenu-button']) ?>
-		<ul class="submenu" style="display: none; margin-left: 0em; margin-top: .2em; display: block; width: 115px; padding: 0.3em; border: 1px solid #bf5e65;">
+		<ul class="submenu" style="display: none; margin-left: 0em; margin-top: .2em; width: 115px; padding: 0.3em; border: 1px solid #bf5e65;">
 			<li><?= $this->linkToFunction($this->t('buttons.edit'), "$('comments').hide(); $('edit').show().scrollTo(); $('post_tags').focus(); Cookie.put('show_defaults_to_edit', 1);") ?></li>
 			<!-- <?php //if (!$this->post->is_deleted() && $this->post->image() && $this->post->width && $this->post->width > 700) : ?>
 			  <li><?php //echo $this->linkToFunction($this->t('.resize'), "post->resize_image()") ?></li>
