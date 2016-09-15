@@ -667,7 +667,7 @@ div#static-index>div#links>a{margin:0 .5em}
 div#static-more>div{float:left;width:25%}
 div#static-more>div>ul{margin-top:2em}
 div#static-more>div>ul>li{list-style-type:none;margin:0}
-div.status-notice{background:black;border:2px solid #BF5050;margin:0 0 1.5em;padding:.5em}
+div.status-notice{background:black;border:2px solid #BF5050;margin:0 0 .5em;padding:.5em}
 div.status-notice p{margin:0}
 div#tag-list{margin-bottom:2em;text-align:center}
 div#tag-list>a{padding-right:5px}
