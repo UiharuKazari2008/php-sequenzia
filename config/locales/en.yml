@@ -869,9 +869,9 @@ en:
         find:
           duplicate: Find dupes
           similar: Find similar
-        next: 'Next »'
+        next: '->>'
         parent: Parent
-        previous: 'Prev «'
+        previous: '<<-'
         random: Random
         title: Related Posts
       statistics_panel:
