@@ -795,8 +795,8 @@ en:
       info: This post does not exist.
       related:
         _: Related Posts
-        next: >>
-        previous: <<
+        next: Next
+        previous: Previous
         random: Random
     show_partials:
       edit:
@@ -869,10 +869,10 @@ en:
         find:
           duplicate: Find dupes
           similar: Find similar
-        next: Next
+        next: »
         parent: Parent
-        previous: Previous
-        random: Random
+        previous: «
+        random: Rand
         title: Related Posts
       statistics_panel:
         approver: Approver
