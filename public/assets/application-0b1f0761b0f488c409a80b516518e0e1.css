@@ -467,8 +467,8 @@ dt.bad{color:red}
 h1#static-index-header{font-size:4em;margin:1em 0 .5em;text-align:center}
 h1#static-index-header a{background:transparent url(../images/logo.png) no-repeat scroll center center;display:block;font-size:0;margin:0;padding:75px 300px;text-align:center;text-indent:-3000em}
 h2.wiki-title{color:#003dd8;margin-bottom:.25em}
-h2#site-title{display:block;height:43px;overflow:hidden;text-align:left}
-div#title{height:40px;margin:.2em 0 .2em -3em}
+h2#site-title{display:block;overflow:hidden;text-align:left}
+div#title{height:40px;margin:.2em 0 0 0}
 h2#site-title img#logo{float:left}
 h2#site-title span{display:block;margin:0;overflow:hidden;padding:.2em 0 0;text-align:left}
 div#static-more div#title{float:none;margin-top:-1em}
@@ -899,7 +899,7 @@ table .center{text-align:center}
 table.nowrap{white-space:nowrap}
 table td.wrap{white-space:normal}
 table td.full{width:100%}
-div#news-ticker{background:#580d0d;border-bottom:2px solid #ff0000;margin:-1em -1em 1em;overflow:hidden;padding:5px;position:relative}
+div#news-ticker{background:#4c0000;border-bottom:2px solid #ff0000;margin:-1em -1em 1em;overflow:hidden;padding:5px;position:relative}
 div#news-ticker ul{float:left;margin:0;padding:0}
 div#news-ticker li{float:left;list-style-type:none;margin:0 2em 0 0;padding:0}
 div#news-ticker a#close-news-ticker-link{float:right}
