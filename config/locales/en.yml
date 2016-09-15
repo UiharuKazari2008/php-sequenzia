@@ -869,10 +869,10 @@ en:
         find:
           duplicate: Find dupes
           similar: Find similar
-        next: »
+        next: 'Next »'
         parent: Parent
-        previous: «
-        random: Rand
+        previous: 'Prev «'
+        random: Random
         title: Related Posts
       statistics_panel:
         approver: Approver
