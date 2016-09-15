@@ -842,7 +842,7 @@ en:
         delete: Delete
         download:
           image: Image
-          larger: Download
+          larger: Download Hi-Res
           normal: Download
         favorites:
           add: Add to favorites

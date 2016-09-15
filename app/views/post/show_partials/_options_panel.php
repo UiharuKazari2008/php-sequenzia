@@ -4,11 +4,11 @@
 			  <?php $file_jpeg = $this->post->get_file_jpeg() ?>
 			  <li><?php if (array_key_exists("dakimakura", $this->post->tags()) && !current_user()->is_contributor_or_higher()) :
 							  $file_sample = $this->post->get_file_sample(current_user());
-							  echo $this->linkTo(($this->post->has_sample() ? $this->t('.download.larger') : $this->t('.download.normal')) . ' (' . $this->numberToHumanSize($file_sample['size']) . ' ' . strtoupper($file_sample['ext']) . ')', $file_sample['url'], array(
+							  echo $this->linkTo(($this->post->has_sample() ? $this->t('.download.larger') : $this->t('.download.normal')) . ' ' . $this->numberToHumanSize($file_sample['size']), $file_sample['url'], array(
 							  'class' => $this->post->has_sample() ? "original-file-changed":"original-file-unchanged",
 							  'id' => 'highres'));
 					  else:
-							  echo $this->linkTo(($this->post->has_sample() ? $this->t('.download.larger') : $this->t('.download.image')) . ' (' . $this->numberToHumanSize($file_jpeg['size']) . ' ' . strtoupper($file_jpeg['ext']) . ')', $file_jpeg['url'], array(
+							  echo $this->linkTo(($this->post->has_sample() ? $this->t('.download.larger') : $this->t('.download.image')) . ' ' . $this->numberToHumanSize($file_jpeg['size']), $file_jpeg['url'], array(
 							  'class' => ($this->post->has_sample() ? "original-file-changed":"original-file-unchanged"),
 							  'id' => 'highres'));
 					  endif
@@ -24,7 +24,7 @@
 				</li>
 			  <?php endif ?>
 			<?php endif ?>
-		<?= $this->linkTo('Options', '#', ['class' => 'submenu-button']) ?>
+		<?= $this->linkTo('Options ■', '#', ['class' => 'submenu-button']) ?>
 		<ul class="submenu" style="display: none">
 			<li><?= $this->linkToFunction($this->t('buttons.edit'), "$('comments').hide(); $('edit').show().scrollTo(); $('post_tags').focus(); Cookie.put('show_defaults_to_edit', 1);") ?></li>
 			<!-- <?php //if (!$this->post->is_deleted() && $this->post->image() && $this->post->width && $this->post->width > 700) : ?>
