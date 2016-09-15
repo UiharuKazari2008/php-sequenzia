@@ -795,8 +795,8 @@ en:
       info: This post does not exist.
       related:
         _: Related Posts
-        next: Next
-        previous: Previous
+        next: >>
+        previous: <<
         random: Random
     show_partials:
       edit:

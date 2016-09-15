@@ -16,9 +16,9 @@
     <div class="sidebar">
       <?= $this->partial('search') ?>
       <?= $this->partial('tags') ?>
+	  <?= $this->partial('post/show_partials/related_posts_panel') ?>
       <?= $this->partial('post/show_partials/statistics_panel') ?>
       <?= $this->partial('post/show_partials/options_panel') ?>
-      <?= $this->partial('post/show_partials/related_posts_panel') ?>
  <br />
   <?php if (CONFIG()->can_show_ad('post#show-sidebar', current_user())) : ?>
     <?= $this->partial('vertical') ?>
