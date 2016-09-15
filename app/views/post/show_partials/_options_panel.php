@@ -1,16 +1,14 @@
 <div>
   <ul>
-	<li class="wiki"><?php if (array_key_exists("dakimakura", $this->post->tags()) && !current_user()->is_contributor_or_higher()) :
-							  $file_sample = $this->post->get_file_sample(current_user());
-							  echo $this->linkTo(($this->post->has_sample() ? $this->t('.download.larger') : $this->t('.download.normal')) . ' (' . $this->numberToHumanSize($file_sample['size']) . ' ' . strtoupper($file_sample['ext']) . ')', $file_sample['url'], array(
-							  'class' => $this->post->has_sample() ? "original-file-changed":"original-file-unchanged",
-							  'id' => 'highres'));
-					  else:
-							  echo $this->linkTo(($this->post->has_sample() ? $this->t('.download.larger') : $this->t('.download.image')) . ' (' . $this->numberToHumanSize($file_jpeg['size']) . ' ' . strtoupper($file_jpeg['ext']) . ')', $file_jpeg['url'], array(
-							  'class' => ($this->post->has_sample() ? "original-file-changed":"original-file-unchanged"),
-							  'id' => 'highres'));
-					  endif
-				  ?>
+	<li class="wiki"><?php if ($this->post->has_jpeg()) : ?>
+				<?php $file_image = $this->post->get_file_image() ?>
+				<?php # If we have a JPEG, the above link was the JPEG.  Link to the PNG here. ?>
+				<li><?= $this->linkTo($this->t('.download.normal').' '.strtoupper($file_image['ext']).' ('.$this->numberToHumanSize($file_image['size']).')', $file_image['url'], array(
+								'class' => 'original-file-unchanged',
+								'id' => 'png'));
+						?>
+				</li>
+			  <?php endif ?>
 		<?= $this->linkTo('■', '#', ['class' => 'submenu-button']) ?>
 		<ul class="submenu">
 			<li><?= $this->linkToFunction($this->t('buttons.edit'), "$('comments').hide(); $('edit').show().scrollTo(); $('post_tags').focus(); Cookie.put('show_defaults_to_edit', 1);") ?></li>
