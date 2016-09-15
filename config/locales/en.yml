@@ -869,15 +869,15 @@ en:
         find:
           duplicate: Find dupes
           similar: Find similar
-        next: '>>'
-        parent: '^^ '
-        previous: '<<'
+        next: 'Next »'
+        parent: 'Up '
+        previous: '« Previous'
         random: Random
         title: Related Posts
       statistics_panel:
         approver: Approver
         favorited_by: Favorited by
-        id: Id
+        id: PID
         posted: Posted
         posted_data_html: '%{time} by %{user}'
         rating: Rating
@@ -913,7 +913,7 @@ en:
         resized:
           always_view_original: Always view original
           hide: Hide this message
-          info_html: This image has been resized. Click on the %{larger} link in the sidebar for a high-quality version.
+          info_html: This image has been resized. %{larger} for a high-quality version.
           view_larger: View larger version
         samples_disabled: Image samples have been disabled. If you find this to be too slow, you can turn samples back on in your profile settings.
     similar:
