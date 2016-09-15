@@ -20,8 +20,7 @@
   <div class="sidebar">
     <?= $this->partial('search') ?>
     <?php if (current_user()->is_privileged_or_higher()) : ?>
-    <div style="margin-bottom: 1em;" id="mode-box" class="advanced-editing">
-      <h5><?= $this->t('.mode') ?></h5>
+    <div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
       <form onsubmit="return false;" action="">
         <div>
           <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
