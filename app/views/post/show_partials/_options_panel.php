@@ -1,4 +1,16 @@
-<div class="clearfix" id="main-menu" data-controller="<?= $this->request()->controller() ?>>
+<div>
+<?php
+  /**
+   * MI: how about caching the menu for each user level, instead of each user,
+   * having placeholders for user id and name that will be replaced with current user's
+   * data right before echoing the menu.
+   */
+  $key  = 'menu.' . Rails::application()->I18n()->locale() . '.'.current_user()->level;
+  $menu = Rails::cache()->read($key);
+
+  if (!$menu) :
+    ob_start();
+  ?>
   <ul>
 	<li class="wiki"><?php if ($this->post->image() && $this->post->can_be_seen_by(current_user())) : ?>
 			  <?php $file_jpeg = $this->post->get_file_jpeg() ?>
