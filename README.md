@@ -1,4 +1,4 @@
-![Logo](https://code.acr.moe/kazari/myimouto/raw/master/public/images/logo.png "Logo")
+![Logo](https://code.acr.moe/kazari/sequenzia/raw/master/public/images/logo.png "Logo")
 # Sequenzia LTS (MyImouto LTS - ACR Rev.)
 
 MyImouto is a clone of [Moebooru](https://github.com/moebooru/moebooru) for PHP and MySQL. In order for this clone to be as exact as possible, MyImouto uses a custom framework that is based on Ruby on Rails, thus the code from Moebooru was transcribed to PHP with some small modifications to fit the target language and framework.
