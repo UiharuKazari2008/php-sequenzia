@@ -18,7 +18,7 @@
   ?>
 
   <div class="sidebar">
-    <?= $this->partial('search') ?>
+    <?php /* <?= $this->partial('search') ?> */ ?>
     <?php if (current_user()->is_privileged_or_higher()) : ?>
     <div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
       <form onsubmit="return false;" action="">
