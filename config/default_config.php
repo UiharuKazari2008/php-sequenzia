@@ -8,7 +8,7 @@ namespace MyImouto;
 abstract class DefaultConfig
 {
     # The name of this booru.
-    public $app_name    = 'my.imouto';
+    public $app_name    = 'Sequenzia';
 
     # Host name. Must not include scheme (i.e. http(s)://) nor trailing slash.
     public $server_host = '127.0.0.1:3000';
@@ -17,7 +17,7 @@ abstract class DefaultConfig
     public $url_base    = 'http://127.0.0.1:3000';
 
     # The version of this MyImouto
-    public $version = '1.0.8';
+    public $version = '1.1';
 
     # This is a salt used to make dictionary attacks on account passwords harder.
     public $user_password_salt = 'choujin-steiner';

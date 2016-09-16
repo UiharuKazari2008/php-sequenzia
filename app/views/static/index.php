@@ -21,7 +21,7 @@
       <?php if (current_user()->is_member_or_higher()) : ?>
         <?= $this->mailTo(CONFIG()->admin_contact, "Contact", ['encode' => "javascript"]) ?> &ndash;
       <?php endif ?>
-      <?= $this->t('static_serve') ?><?= number_format($this->post_count, 0) ?><?= $this->t('static_posts2') ?>&ndash; <?= str_replace('Moebooru', 'MyImouto', $this->t('static_running')) ?><?= CONFIG()->version ?>
+      <?= $this->t('static_serve') ?><?= number_format($this->post_count, 0) ?><?= $this->t('static_posts2') ?>&ndash; <?= str_replace('Moebooru', 'Sequenzia', $this->t('static_running')) ?><?= CONFIG()->version ?>
       <br />
       <?= $this->t('static_translation') ?>
     </p>
