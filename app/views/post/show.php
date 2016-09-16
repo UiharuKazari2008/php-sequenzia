@@ -13,7 +13,6 @@
 
     <?= $this->partial('post/show_partials/status_notices', array('pools' => $this->pools)) ?>
     <div class="sidebar">
-      <?= $this->partial('search') ?>
       <?= $this->partial('tags') ?>
 	  <?= $this->partial('post/show_partials/related_posts_panel') ?>
       <?= $this->partial('post/show_partials/statistics_panel') ?>
