@@ -15,7 +15,7 @@
       <h4><?= $this->t('.guidelines.title') ?></h4>
       <p><?= $this->t('.guidelines.info') ?></p>
       <ul>
-        <li><?= $this->t(['.guidelines.do_not.tags_html', 'tags' => substr_replace(($str = implode(', ', array_map(function($t){return $this->linkTo(str_replace('_', ' ', $t), ['wiki#show', 'title' => $t]);}, ['furry', 'yaoi', 'guro', 'toon', 'poorly_drawn']))), ' or', strrpos($str, ','), 1) ]) ?></li>
+        <li><?= $this->t(['.guidelines.do_not.tags_html', 'tags' => substr_replace(($str = implode(', ', array_map(function($t){return $this->linkTo(str_replace('_', ' ', $t), ['wiki#show', 'title' => $t]);}, ['furry', 'scat', 'toon', 'poorly_drawn']))), ' or', strrpos($str, ','), 1) ]) ?></li>
         <li><?= $this->t(['.guidelines.do_not.with_html', 'with' => $this->linkTo($this->t('.guidelines.do_not.compression_artifacts'), array('wiki#show', 'title' => 'compression_artifacts'))]) ?></li>
         <li><?= $this->t(['.guidelines.do_not.with_html', 'with' => $this->linkTo($this->t('.guidelines.do_not.obnoxious_watermarks'), array('wiki#show', 'title' => 'watermark'))]) ?></li>
         <li><?= $this->linkTo($this->t('.guidelines.group'), 'help#post_relationships') ?></li>
