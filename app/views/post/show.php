@@ -12,23 +12,17 @@
     <?php endif ?>
 
     <?= $this->partial('post/show_partials/status_notices', array('pools' => $this->pools)) ?>
-
-    <li class="wiki"><?= $this->linkTo('Options ■', '#', ['class' => 'submenu-button']) ?>
-		<ul class="submenu" style="display: none; margin-left: 0em; margin-top: .2em; width: 115px; padding: 0.3em; border: 1px solid #bf5e65;">
-			<div class="sidebar">
-			  <?= $this->partial('search') ?>
-			  <?= $this->partial('tags') ?>
-			  <?= $this->partial('post/show_partials/related_posts_panel') ?>
-			  <?= $this->partial('post/show_partials/statistics_panel') ?>
-			  <?= $this->partial('post/show_partials/options_panel') ?>
-			<?php if (CONFIG()->can_show_ad('post#show-sidebar', current_user())) : ?>
-			<?= $this->partial('vertical') ?>
-				<?php endif ?>
-			</div>
-		</ul>
-	</li>
-  </div>
+    <div class="sidebar">
+      <?= $this->partial('search') ?>
+      <?= $this->partial('tags') ?>
+	  <?= $this->partial('post/show_partials/related_posts_panel') ?>
+      <?= $this->partial('post/show_partials/statistics_panel') ?>
+      <?= $this->partial('post/show_partials/options_panel') ?>
  <br />
+  <?php if (CONFIG()->can_show_ad('post#show-sidebar', current_user())) : ?>
+    <?= $this->partial('vertical') ?>
+  <?php endif ?>
+    </div>
     <div class="content content-post" id="right-col">
       <?php if (CONFIG()->can_show_ad('post#show-top', current_user())) : ?>
         <?= $this->partial('horizontal', ['position' => 'top']) ?>
