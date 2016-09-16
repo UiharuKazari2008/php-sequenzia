@@ -1,4 +1,4 @@
-<div style="margin-bottom: 0.5em;">
+<div style="margin-right: 0.0em;">
   <?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
     <div style="margin:0;padding:0;display:inline"></div>
     <div>
