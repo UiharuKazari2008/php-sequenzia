@@ -592,7 +592,7 @@ div#comment-list>div.post>div.col2>div.header{margin-bottom:1em}
 div#comment-list>div.post>div.col2>div.header>div>span.info{margin-right:1em}
 div#comment-list>div.post>div.col2>div.header>div.tags>span{margin:0 .5em 0 0}
 div.content-post{float:left}
-div.content{display:table-cell;margin:0;width:50%}
+div.content{display:table-cell;margin:0;width:75%}
 div.footer{clear:both;color:#bf5e65;font-size:120%;margin-top:1em;text-align:center}
 div.footer.footer-aligned-to-content{clear:none}
 div.footer>.footer-disabled{color:#777}
