@@ -482,8 +482,8 @@ input{background:transparent;border-color:darkred;border-style:solid;border-widt
 {color:#FFF}
 input[type=text]:focus{background:#401212;color:#d8d1d1}
 input[type=password]:focus{background:#401212;color:#d8d1d1}
-input[type=button]{background:darkred;color:#b39393}
-input[type=submit]{background:darkred;color:#b39393}
+input[type=button]{background:darkred;color:#3a0404}
+input[type=submit]{background:darkred;color:#631717}
 HTML.webkit input[type=file]{background:darkred;color:#b39393}
 label{font-weight:bold;white-space:nowrap}
 ol{margin-left:1em}
@@ -543,25 +543,25 @@ ul.link-page>li{list-style-type:none;margin:0;padding:0}
 #history .tag-type-artist{color:#b4b48f}
 .color-tag-types .tag-type-artist{color:#b4b48f}
 .tag-type-artist>a:hover{color:#33cfff}
-.tag-type-faults>a{color:#ff2020}
-#history .tag-type-faults{color:#ff2020}
-.color-tag-types .tag-type-faults{color:#ff2020}
+.tag-type-faults>a{color:#b39e6e}
+#history .tag-type-faults{color:#b39e6e}
+.color-tag-types .tag-type-faults{color:#b39e6e}
 .tag-type-faults>a:hover{color:#33cfff}
-.tag-type-circle>a{color:#88d1d1}
-#history .tag-type-circle{color:#88d1d1}
-.color-tag-types .tag-type-circle{color:#88d1d1}
+.tag-type-circle>a{color:#63899c}
+#history .tag-type-circle{color:#63899c}
+.color-tag-types .tag-type-circle{color:#63899c}
 .tag-type-circle>a:hover{color:#33cfff}
-.tag-type-character>a{color:#5A875A}
-#history .tag-type-character{color:#5A875A}
-.color-tag-types .tag-type-character{color:#5A875A}
+.tag-type-character>a{color:#7a9a7a}
+#history .tag-type-character{color:#7a9a7a}
+.color-tag-types .tag-type-character{color:#7a9a7a}
 .tag-type-character>a:hover{color:#33cfff}
-.tag-type-copyright>a{color:#AD6096}
-#history .tag-type-copyright{color:#AD6096}
-.color-tag-types .tag-type-copyright{color:#AD6096}
+.tag-type-copyright>a{color:#9c639a}
+#history .tag-type-copyright{color:#9c639a}
+.color-tag-types .tag-type-copyright{color:#9c639a}
 .tag-type-copyright>a:hover{color:#33cfff}
 .upload-progress-bar{border:1px solid #FFF;display:inline-block;height:1em;width:100px}
 .upload-progress-bar-fill{background-color:#48F;height:100%}
-.tag-completion-box{background-color:#2b0000;left:0;position:absolute;top:0;z-index:10}
+.tag-completion-box{background-color:rgba(43, 0, 0, 0.81);left:0;position:absolute;top:0;z-index:10}
 .tag-completion-box ul{list-style-type:none;margin:.5em}
 .tag-completion-box .completed-tag{cursor:default;margin:0;position:relative}
 .tag-completion-box .completed-tag-alias{float:right;margin-left:1em}
