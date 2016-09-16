@@ -17,7 +17,8 @@
     endif
   ?>
 <li class="wiki"><?= $this->linkTo('Options ■', '#', ['class' => 'submenu-button']) ?>
-  <div class="sidebar" style="display: none; margin-left: 0em; margin-top: .2em; width: 115px; padding: 0.3em; border: 1px solid #bf5e65;">
+  <ul class="submenu" style="display: none; margin-left: 0em; margin-top: .2em; width: 115px; padding: 0.3em; border: 1px solid #bf5e65;">
+  <div class="sidebar">
     <?= $this->partial('search') ?>
     <?php if (current_user()->is_privileged_or_higher()) : ?>
     <div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
@@ -76,6 +77,7 @@
     <?= $this->partial('vertical') ?>
     <?php endif ?>
   </div>
+  </ul>
   </li>
   <div class="content">
     <?php if (!empty($this->ambiguous_tags)) : ?>
