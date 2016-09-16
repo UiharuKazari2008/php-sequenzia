@@ -1,8 +1,8 @@
 @charset UTF-8;
-::-webkit-input-placeholder {color:#630000;}
-:-moz-placeholder {color:#630000; opacity:1;}
-::-moz-placeholder {color:#630000; opacity:1;}
-:-ms-input-placeholder {color:#630000;}
+::-webkit-input-placeholder {color:#730000;}
+:-moz-placeholder {color:#730000; opacity:1;}
+::-moz-placeholder {color:#730000; opacity:1;}
+:-ms-input-placeholder {color:#730000;}
 .ui-helper-hidden{display:none}
 .ui-helper-hidden-accessible{border:0;clip:rect(0000);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 .ui-helper-reset{border:0;font-size:100%;line-height:1.3;list-style:none;margin:0;outline:0;padding:0;text-decoration:none}
