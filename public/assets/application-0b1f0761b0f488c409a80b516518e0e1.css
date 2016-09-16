@@ -482,8 +482,8 @@ input{background:transparent;border-color:darkred;border-style:solid;border-widt
 {color:#FFF}
 input[type=text]:focus{background:#401212;color:#d8d1d1}
 input[type=password]:focus{background:#401212;color:#d8d1d1}
-input[type=button]{background:#3a0404;color:#}
-input[type=submit]{background:#631717;color:#631717}
+input[type=button]{background:#3a0404;color:#b78e8e}
+input[type=submit]{background:#631717;color:#b78e8e}
 HTML.webkit input[type=file]{background:darkred;color:#b39393}
 label{font-weight:bold;white-space:nowrap}
 ol{margin-left:1em}
