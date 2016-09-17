@@ -561,7 +561,7 @@ ul.link-page>li{list-style-type:none;margin:0;padding:0}
 .tag-type-copyright>a:hover{color:#33cfff}
 .upload-progress-bar{border:1px solid #FFF;display:inline-block;height:1em;width:100px}
 .upload-progress-bar-fill{background-color:#48F;height:100%}
-.tag-completion-box{background-color:rgba(43, 0, 0, 0.81);left:0;position:absolute;top:0;z-index:10}
+.tag-completion-box{background-color:#2b0000;left:0;position:absolute;top:0;z-index:10}
 .tag-completion-box ul{list-style-type:none;margin:.5em}
 .tag-completion-box .completed-tag{cursor:default;margin:0;position:relative}
 .tag-completion-box .completed-tag-alias{float:right;margin-left:1em}
