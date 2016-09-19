@@ -16,8 +16,7 @@
       unset($total, $count);
     endif
   ?>
-
-  <div class="sidebar">
+  <div class="sidebar" style="display:none">
     <?php /* <?= $this->partial('search') ?> */ ?>
     <?php if (current_user()->is_privileged_or_higher()) : ?>
     <div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
@@ -26,7 +25,7 @@
           <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
             <option value="view"><?= $this->t('.mode_form.view') ?></option>
             <option value="edit"><?= $this->t('.mode_form.edit') ?></option>
-<!--            <option value="rating-s">Rate safe</option>
+<!--        <option value="rating-s">Rate safe</option>
             <option value="rating-q">Rate questionable</option>
             <option value="rating-e">Rate explicit</option>
             <?php if (current_user()->is_privileged_or_higher()) : ?>
@@ -68,7 +67,7 @@
     <?php endif ?>
 
     <?= $this->partial('blacklists') ?>
-    <?= $this->partial('tags', array('include_tag_hover_highlight' => 'true')) ?>
+  <?php #     <?= $this->partial('tags', array('include_tag_hover_highlight' => 'true')) ?> 
 
     <br />
 
@@ -77,7 +76,41 @@
     <?php endif ?>
   </div>
   <div class="content">
-    <?php if (!empty($this->ambiguous_tags)) : ?>
+    <?php if (current_user()->is_privileged_or_higher()) : ?>
+    <div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
+      <form onsubmit="return false;" action="">
+        <div>
+          <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
+            <option value="view"><?= $this->t('.mode_form.view') ?></option>
+            <option value="edit"><?= $this->t('.mode_form.edit') ?></option>
+<!--        <option value="rating-s">Rate safe</option>
+            <option value="rating-q">Rate questionable</option>
+            <option value="rating-e">Rate explicit</option>
+            <?php if (current_user()->is_privileged_or_higher()) : ?>
+              <option value="lock-rating">Lock rating</option>
+              <option value="lock-note">Lock notes</option>
+            <?php endif ?> -->
+            <?php if (current_user()->is_mod_or_higher()) : ?>
+              <option value="approve"><?= $this->t('.mode_form.approve') ?></option>
+            <?php endif ?>
+            <option value="flag"><?= $this->t('.mode_form.flag') ?></option>
+            <option value="apply-tag-script"><?= $this->t('.mode_form.script') ?></option>
+            <option value="reparent-quick"><?= $this->t('.mode_form.reparent') ?></option>
+            <?php if ($this->searching_pool) : ?>
+              <option value="remove-from-pool"><?= $this->t('.mode_form.pool_remove') ?></option>
+            <?php endif ?>
+            <?php if (CONFIG()->delete_post_mode && current_user()->is_admin()) : ?>
+              <option value="destroy">Delete posts</option>
+            <?php endif ?>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <?= $this->partial('tag_script') ?>
+    <?php endif ?>
+	<?= $this->partial('blacklists') ?>
+	<?php if (!empty($this->ambiguous_tags)) : ?>
       <div class="status-notice">
         <?= $this->t('.ambiguous') ?>: <?= implode(', ', array_map(function($x){ return $this->linkTo($this->h($x), ['wiki#show', 'title' => $x]); }, $this->ambiguous_tags)) ?>
       </div>

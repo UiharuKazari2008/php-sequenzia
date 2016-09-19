@@ -1,7 +1,5 @@
 <div id="stats" class="vote-container">
   <ul>
-	<li class="wiki"><?= $this->linkTo('Info ■', '#', ['class' => 'submenu-button']) ?>
-	<ul class="submenu" style="display: none; margin-left: 0em; margin-top: .2em; width: 115px; padding: 0.3em; border: 1px solid #bf5e65;">
     <li><?= $this->t('.id') ?>: <?= $this->post->id ?></li>
     <li><?= $this->t('.posted') ?>: <?= $this->t(['.posted_data_html', 'time' => $this->linkTo($this->t(['time.x_ago', 't' => $this->timeAgoInWords($this->post->created_at)]), ["#index", 'tags' => "date:" . substr($this->post->created_at, 0, 10)], ['title' => substr(date('r', strtotime($this->post->created_at)), 0, -6)]), 'user' => $this->linkToIf($this->post->user_id, $this->post->author(), ['user#show', 'id' => $this->post->user_id])]) ?></li>
     <?php if (current_user()->is_admin() && $this->post->approver) : ?>
@@ -28,8 +26,6 @@
     </li>
 
     <li><?= $this->t('.favorited_by') ?>: <span id="favorited-by"><?= $this->favorite_list($this->post) ?></span> <span id="favorited-by-more"></span></li>
-	</li>
-	</ul>
   </ul>
 </div>
 
