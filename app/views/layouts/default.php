@@ -139,44 +139,7 @@ container
 	  <?php
 		if ($this->request()->controller() == 'post') : ?>
 			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '36', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
-			<?php if (current_user()->is_privileged_or_higher()) : ?>
-			<select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
-					<option value="view">View</option>
-					<option value="edit">Edit</option>
-		            <option value="rating-s">Rate safe</option>
-					<option value="rating-q">Rate questionable</option>
-					<option value="rating-e">Rate explicit</option>
-					<?php if (current_user()->is_privileged_or_higher()) : ?>
-					  <option value="lock-rating">Lock rating</option>
-					  <option value="lock-note">Lock notes</option>
-					<?php endif ?>
-					<?php if (current_user()->is_mod_or_higher()) : ?>
-					  <option value="approve">Moderate</option>
-					<?php endif ?>
-					<option value="flag">Flag</option>
-					<option value="apply-tag-script">Advanced Tag</option>
-					<option value="reparent-quick">Reparent</option>
-					<?php if ($this->searching_pool) : ?>
-					  <option value="remove-from-pool">Remove from Pool</option>
-					<?php endif ?>
-					<?php if (CONFIG()->delete_post_mode && current_user()->is_admin()) : ?>
-					  <option value="destroy">Delete posts</option>
-					<?php endif ?>
-		    </select>
-			<div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
-			  <form onsubmit="return false;" action="">
-				<div>
-				  
-				</div>
-			  </form>
-			</div>
 			<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
-			<?= $this->partial('tag_script') ?>
-			<?php endif ?>
-		 <?php endif ?>
-	  <?php
-		if ($this->request()->controller() == 'tag') : ?>
-			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '36', 'autocomplete' => 'off', 'placeholder' => 'Search Comments...', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
 		 <?php endif ?>
     </div>
   <?php }) ?>
