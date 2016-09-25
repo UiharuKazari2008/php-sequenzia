@@ -19,8 +19,6 @@
 
   <div class="sidebar">
     <?php /* <?= $this->partial('search') ?> */ ?>
-    
-
     <?php if ($this->searching_pool) : ?>
       <?= $this->t(['.pool_view_html', 'pool' => $this->linkTo($this->h($this->searching_pool->pretty_name()), array('pool#show', 'id' => $this->searching_pool->id))]) ?>
     <?php endif ?>
