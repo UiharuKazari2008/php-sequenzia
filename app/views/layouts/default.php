@@ -140,10 +140,7 @@ container
 		if ($this->request()->controller() == 'post') : ?>
 			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '36', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
 			<?php if (current_user()->is_privileged_or_higher()) : ?>
-			<div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
-			  <form onsubmit="return false;" action="">
-				<div>
-				  <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
+			<select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="width: 13em; padding: 0 0 .2em 0; background: black; color: #BF5E65; border-style: solid; border-width: 0px 0px 1px 0px; border-color: darkred;">
 					<option value="view">View</option>
 					<option value="edit">Edit</option>
 		            <option value="rating-s">Rate safe</option>
@@ -165,7 +162,11 @@ container
 					<?php if (CONFIG()->delete_post_mode && current_user()->is_admin()) : ?>
 					  <option value="destroy">Delete posts</option>
 					<?php endif ?>
-				  </select>
+		    </select>
+			<div style="margin-bottom: 0.5em;" id="mode-box" class="advanced-editing">
+			  <form onsubmit="return false;" action="">
+				<div>
+				  
 				</div>
 			  </form>
 			</div>
