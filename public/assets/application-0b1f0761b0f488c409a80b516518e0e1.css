@@ -726,7 +726,7 @@ a.directlink:hover>.directlink-info{display:none}
 .largeimg .directlink-icon-small{display:none}
 .smallimg .directlink-icon-large{display:none}
 .similar .directlink-icon{display:none}
-.top-corner-float{background:#222;border:solid #000 2px;padding:6px;position:fixed;right:2px;top:2px;z-index:5}
+.top-corner-float{background:#222;border:solid #000 2px;padding:6px;position:fixed;right:2px;top:2px;z-index:5;font-size: 12px}
 .post-hover{background:#222;border:2px solid #000;max-width:30em;min-width:20em;padding:2px;position:absolute;z-index:2}
 .post-hover-overlay{position:absolute;z-index:2}
 .post-hover-overlay>a>img{border-color:#000;border-style:solid;border-width:0 2px 2px;margin-left:-2px;vertical-align:top}
