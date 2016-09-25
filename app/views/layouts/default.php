@@ -137,7 +137,7 @@ container
     <div style="margin:0;padding:0;display:inline"></div>
     <div>
 	  <?php
-		if ($this->request()->controller() == 'posts') : ?>
+		if ($this->request()->controller() == 'post') : ?>
 			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '36', 'autocomplete' => 'off', 'placeholder' => 'Search', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
 		 <?php endif ?>
     </div>
