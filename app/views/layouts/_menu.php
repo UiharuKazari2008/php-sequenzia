@@ -46,11 +46,7 @@
           <li><?= $this->linkTo($this->t('.posts.upload'), ['controller' => 'post', 'action' => 'upload']) ?></li>
           <li><?= $this->linkTo($this->t('.posts.random'), ['controller' => 'post', 'tags' => 'order:random']) ?></li>
           <li><?= $this->linkTo($this->t('.posts.popular'), ['controller' => 'post', 'action' => 'popular_recent']) ?></li>
-          <li><?= $this->linkTo($this->t('.posts.image_search'), ['controller' => 'post', 'action' => 'similar']) ?></li>
           <li><?= $this->linkTo($this->t('.posts.history'), ['controller' => 'history', 'action' => 'index']) ?></li>
-          <?php if (current_user()->is_contributor_or_higher()) : ?>
-            <li><?= $this->linkTo($this->t('.posts.batch'), ['controller' => 'batch', 'action' => 'index']) ?></li>
-          <?php endif ?>
           <?php if (current_user()->is_janitor_or_higher()) : ?>
             <li><?= $this->linkTo($this->t('.posts.moderate'), ['controller' => 'post', 'action' => 'moderate'], ['class' => 'moderate']) ?></li>
           <?php endif ?>

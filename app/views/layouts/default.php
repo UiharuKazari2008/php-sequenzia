@@ -136,12 +136,15 @@ container
   <?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
     <div style="margin:0;padding:0;display:inline"></div>
     <div>
-      <?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '38', 'autocomplete' => 'off', 'placeholder' => 'Search', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
-      <?php //<?= $this->submitTag($this->t('.search'), array('style' => 'display: none;', 'name' => '')) ?> 
+	  <?php
+		if ($this->request()->controller() == 'post') : ?>
+			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '36', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
+			<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
+		 <?php endif ?>
     </div>
   <?php }) ?>
 </div>
-<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?> </h2></div>
+ </h2></div>
     <?= $this->partial('layouts/menu') ?>
   </div>
   <?= $this->partial('layouts/login') ?>
