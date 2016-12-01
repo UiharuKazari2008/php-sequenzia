@@ -132,7 +132,7 @@ container
 </script>
   <?= $this->partial('layouts/news') ?>
   <div id="header">
-    <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '195x40', 'id' => 'logo')), CONFIG()->url_base) ?><div style="margin-right: 0.0em;">
+    <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '146x30', 'id' => 'logo')), CONFIG()->url_base) ?><div style="margin-right: 0.0em;">
   <?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
     <div style="margin:0;padding:0;display:inline"></div>
     <div>
