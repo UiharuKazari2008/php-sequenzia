@@ -138,7 +138,7 @@ container
     <div>
 	  <?php
 		if ($this->request()->controller() == 'post') : ?>
-			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '55', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
+			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '60', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
 			<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
 		 <?php endif ?>
     </div>
