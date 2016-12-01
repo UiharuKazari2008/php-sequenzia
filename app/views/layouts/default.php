@@ -132,13 +132,13 @@ container
 </script>
   <?= $this->partial('layouts/news') ?>
   <div id="header">
-    <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '195x40', 'id' => 'logo')), CONFIG()->url_base) ?><div style="margin-right: 0.0em;">
+    <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '146x30', 'id' => 'logo')), CONFIG()->url_base) ?><div style="margin-right: 0.0em;">
   <?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
     <div style="margin:0;padding:0;display:inline"></div>
     <div>
 	  <?php
 		if ($this->request()->controller() == 'post') : ?>
-			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '36', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 20pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
+			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '60', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
 			<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
 		 <?php endif ?>
     </div>
