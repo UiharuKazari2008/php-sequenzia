@@ -12,9 +12,9 @@ trait PostFileMethods
         'image/jpg'  => 'jpg',
         'image/png'  => 'png',
         'image/gif'  => 'gif',
+        'application/x-shockwave-flash' => 'swf',
         'video/webm' => 'webm',
         'video/mp4'  => 'mp4',
-        'application/x-shockwave-flash' => 'swf'
     ];
     
     /**
@@ -35,7 +35,6 @@ trait PostFileMethods
     public $tempfile_name;
     
     public $mime_type;
-
     public $received_file;
     
     protected $upload;
@@ -86,7 +85,6 @@ trait PostFileMethods
         // }
         // return true
     }
-
     protected function ensure_tempfile_exists()
     {
         // if ($this->is_upload) {
@@ -101,7 +99,6 @@ trait PostFileMethods
         $this->errors()->add('file', "not found, try uploading again");
         return false;
     }
-
     protected function validate_content_type()
     {
         if (!array_key_exists($this->mime_type, self::$MIME_TYPES)) {
@@ -127,7 +124,6 @@ trait PostFileMethods
         # - remove artist and circle tags last; these are the most important
         # - general tags can either be important ("fixme") or useless ("red hair")
         # - remove character tags first; 
-
      
         if ($options['type'] == 'sample')
             $tags = "sample";
@@ -136,7 +132,6 @@ trait PostFileMethods
         
         # Filter characters.
         $tags = str_replace(array('/', '?'), array('_', ''), $tags);
-
         $name = "{$this->id} $tags";
         if (CONFIG()->download_filename_prefix)
             $name = CONFIG()->download_filename_prefix . " " . $name;
@@ -167,7 +162,6 @@ trait PostFileMethods
             $this->tempfile_path = tempnam(Rails::root()  . "/tmp", "upload");
         return $this->tempfile_path;
     }
-
     public function fake_sample_url()
     {
         if (CONFIG()->use_pretty_image_urls) {
@@ -182,7 +176,6 @@ trait PostFileMethods
     {
         return Rails::root() . "/public/data/{$this->md5}-preview.jpg";
     }
-
     public function tempfile_sample_path()
     {
         return Rails::root() . "/public/data/{$this->md5}-sample.jpg";
@@ -192,7 +185,6 @@ trait PostFileMethods
     {
         return Rails::root() . "/public/data/".$this->md5."-jpeg.jpg";
     }
-
     # Generate MD5 and CRC32 hashes for the file.    Do this before generating samples, so if this
     # is a duplicate we'll notice before we spend time resizing the image.
     public function regenerate_hash()
@@ -210,12 +202,10 @@ trait PostFileMethods
         // $this->crc32 = ...............
         return true;
     }
-
     public function regenerate_jpeg_hash()
     {
         if (!$this->has_jpeg())
             return false;
-
         // crc32_accum = 0
         // File.open(jpeg_path, 'rb') { |fp|
             // buf = ""
@@ -224,11 +214,9 @@ trait PostFileMethods
             // end
         // }
         // return; false if self.jpeg_crc32 == crc32_accum
-
         // self.jpeg_crc32 = crc32_accum
         return true;
     }
-
     public function generate_hash()
     {
         if (!$this->regenerate_hash())
@@ -241,7 +229,6 @@ trait PostFileMethods
         } else
             return true;
     }
-
     # Generate the specified image type.    If options[:force_regen] is set, generate the file even
     # IF it already exists
     
@@ -249,7 +236,6 @@ trait PostFileMethods
     {
         if (!$this->image())
             return true;
-
         $force_regen = !empty($options['force_regen']);
         
         switch ($type) {
@@ -280,7 +266,6 @@ trait PostFileMethods
             default:
                 throw new Exception(sprintf("unknown type: %s", $type));
         }
-
         # Only move in the changed files on success.    When we return; false, the caller won't
         # save us to the database; we need to only move the new files in if we're going to be
         # saved.    This is normally handled by move_file.
@@ -292,10 +277,8 @@ trait PostFileMethods
             rename($temp_path, $dest_path);
             chmod($dest_path, 0775);
         }
-
         return true;
     }
-
     # Automatically download from the source if it's a URL.
     public function download_source()
     {
@@ -323,7 +306,6 @@ trait PostFileMethods
             return false;
         }
     }
-
     public function determine_content_type()
     {
         if (!file_exists($this->tempfile_path())) {
@@ -333,19 +315,18 @@ trait PostFileMethods
         
         $this->tempfile_name = pathinfo($this->tempfile_name, PATHINFO_FILENAME);
         
-       // list ($x, $y, $type) = getimagesize($this->tempfile_path());
-       // $this->mime_type = image_type_to_mime_type($type);
         list ($x, $y) = getimagesize($this->tempfile_path());
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $this->mime_type = finfo_file($finfo, $this->tempfile_path());
-        finfo_close($finfo);
+        
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+         $this->mime_type = finfo_file($finfo, $this->tempfile_path());
+         //$this->mime_type = image_type_to_mime_type($type);
+         finfo_close($finfo);
     }
     
     # Assigns a CGI file to the post. This writes the file to disk and generates a unique file name.
     // protected function file_setter($f)
     // {
         // return; if f.nil? || count(f) == 0
-
         // if (f.tempfile.path) {
             // # Large files are stored in the temp directory, so instead of
             // # reading/rewriting through Ruby, just rely on system calls to
@@ -357,15 +338,18 @@ trait PostFileMethods
         
         // $this->received_file = true;
     // }
-
     protected function set_image_dimensions()
     {
         if ($this->image() or $this->flash()) {
             list($this->width, $this->height) = getimagesize($this->tempfile_path());
         }
+	elseif ($this->video()){
+ 	    $video = new FFmpegMovie($this->tempfile_path());
+ 	    $this->width = $video->getFrameWidth();
+             $this->height = $video->getFrameHeight();
+ 	}
         $this->file_size = filesize($this->tempfile_path());
     }
-
     # If the image resolution is too low and the user is privileged or below, force the
     # image to pending.    If the user has too many pending posts, raise an error.
     #
@@ -378,7 +362,6 @@ trait PostFileMethods
         if ($this->width * $this->height >= CONFIG()->min_mpixels) return false;
         return true;
     }
-
     protected function set_image_status()
     {
         if (!$this->image_is_too_small())
@@ -386,12 +369,10 @@ trait PostFileMethods
         
         if ($this->user->level >= 33)
             return;
-
         $this->status = "pending";
         $this->status_reason = "low-res";
         return true;
     }
-
     # If this post is pending, and the user has too many pending posts, reject the upload.
     # This must be done after set_image_status.
     public function check_pending_count()
@@ -399,35 +380,31 @@ trait PostFileMethods
         if (!CONFIG()->max_pending_images) return;
         if ($this->status != "pending") return;
         if ($this->user->level >= 33) return;
-
         $pending_posts = Post::where("user_id = ? AND status = 'pending'", $this->user_id)->count();
         if ($pending_posts < CONFIG()->max_pending_images) return;
-
         $this->errors()->addToBase("You have too many posts pending moderation");
         return false;
     }
-
     # Returns true if the post is an image format that GD can handle.
     public function image()
     {
         return in_array($this->file_ext, array('jpg', 'jpeg', 'gif', 'png'));
     }
-
     # Returns true if the post is a Flash movie.
     public function flash()
     {
         return $this->file_ext == "swf";
     }
     
-    public function video()
-    {
-        return in_array($this->file_ext, array('mp4', 'webm'));
-    }
     public function gif()
     {
         return $this->file_ext == 'gif';
     }
-
+	public function video()
+ 	{
+ 		return in_array($this->file_ext, array('mp4', 'webm'));
+ 	}
+ 
     // public function find_ext(file_path)
     // {
         // ext = File.extname(file_path)
@@ -440,58 +417,48 @@ trait PostFileMethods
         // }
     // }
     
-
     
     // public function content_type_to_file_ext(content_type)
     // {
         // case content_type.chomp
         // when "image/jpeg"
             // return; "jpg"
-
         // when "image/gif"
             // return; "gif"
-
         // when "image/png"
             // return; "png"
-
         // when "application/x-shockwave-flash"
             // return; "swf"
-
         // } else {
             // nil
         // end
     // }
-
     public function raw_preview_dimensions()
     {
-        if ($this->image()) {
+        if ($this->image() || $this->video()) {
             $dim = Moebooru\Resizer::reduce_to(array('width' => $this->width, 'height' => $this->height), array('width' => 300, 'height' => 300));
             $dim = array($dim['width'], $dim['height']);
         } else
             $dim = array(300, 300);
         return $dim;
     }
-
     public function preview_dimensions()
     {
-        if ($this->image()) {
+        if ($this->image() || $this->video() ) {
             $dim = Moebooru\Resizer::reduce_to(array('width' => $this->width, 'height' => $this->height), array('width' => 150, 'height' => 150));
             $dim = array($dim['width'], $dim['height']);
         } else
             $dim = array(150, 150);
         return $dim;
     }
-
     public function generate_sample($force_regen = false)
     {
         if ($this->gif() || !$this->image()) return true;
         elseif (!CONFIG()->image_samples) return true;
         elseif (!$this->width && !$this->height) return true;
         elseif ($this->file_ext == "gif") return true;
-
         # Always create samples for PNGs.
         $ratio = $this->file_ext == 'png' ? 1 : CONFIG()->sample_ratio;
-
         $size = array('width' => $this->width, 'height' => $this->height);
         if (CONFIG()->sample_width)
             $size = Moebooru\Resizer::reduce_to($size, array('width' => CONFIG()->sample_width, 'height' => CONFIG()->sample_height), $ratio);
@@ -506,7 +473,6 @@ trait PostFileMethods
             $this->errors()->add('file', "not found");
             return false;
         }
-
         # If we're not reducing the resolution for the sample image, only reencode if the
         # source image is above the reencode threshold.    Anything smaller won't be reduced
         # enough by the reencode to bother, so don't reencode it and save disk space.
@@ -534,13 +500,12 @@ trait PostFileMethods
         
         # iTODO: enable crc32 for samples.
         $crc32_accum = 0;
-
         return true;
     }
     
     protected function generate_preview($force_regen = false)
     {
-        if (!$this->image() || (!$this->width && !$this->height))
+        if ((!$this->image() && !$this->video()) || (!$this->width && !$this->height))
             return true;
         
         # If we already have a preview image, don't regenerate it.
@@ -549,7 +514,6 @@ trait PostFileMethods
         }
         
         $size = Moebooru\Resizer::reduce_to(array('width' => $this->width, 'height' => $this->height), array('width' => 300, 'height' => 300));
-
         # Generate the preview from the new sample if we have one to save CPU, otherwise from the image.
         if (is_file($this->tempfile_sample_path()))
             list($path, $ext) = array($this->tempfile_sample_path(), "jpg");
@@ -562,12 +526,25 @@ trait PostFileMethods
         else
             return false;
         
-        try {
-            Moebooru\Resizer::resize($ext, $path, $this->tempfile_preview_path(), $size, 85);
-        } catch (Exception $e) {
-            $this->errors()->add("preview", "couldn't be generated (".$e->getMessage().")");
-            $this->delete_tempfile();
-            return false;
+                if ($this->video()){
+             try {
+ 	        $video = new FFmpegMovie($this->tempfile_path());
+                 $video->getFrameAtTime($seconds = 2, $size['width'], $size['height'], '', $this->tempfile_preview_path());
+             } catch (Exception $e) {
+                 $this->errors()->add("preview", "couldn't be generated (".$e->getMessage().")");
+                 $this->delete_tempfile();
+                 return false;
+             }
+ 	}
+ 
+         if ($this->image()){
+             try {
+                 Moebooru\Resizer::resize($ext, $path, $this->tempfile_preview_path(), $size, 85);
+             } catch (Exception $e) {
+                 $this->errors()->add("preview", "couldn't be generated (".$e->getMessage().")");
+                 $this->delete_tempfile();
+                 return false;
+             }
         }
         
         $this->actual_preview_width = $this->raw_preview_dimensions()[0];
@@ -577,7 +554,6 @@ trait PostFileMethods
         
         return true;
     }
-
     # If the JPEG version needs to be generated (or regenerated), output it to tempfile_jpeg_path.    On
     # error, return; false; on success or no-op, return; true.
     protected function generate_jpeg($force_regen = false)
@@ -589,7 +565,6 @@ trait PostFileMethods
         # Only generate JPEGs for PNGs.    Don't do it for files that are already JPEGs; we'll just add
         # artifacts and/or make the file bigger.    Don't do it for GIFs; they're usually animated.
         if ($this->file_ext != "png") return true;
-
         # We can generate the image during upload or offline.    Use tempfile_path
         #- if it exists, otherwise use file_path.
         $path = $this->tempfile_path();
@@ -617,16 +592,13 @@ trait PostFileMethods
         
         # iTODO: enable crc32 for jpg.
         $crc32_accum = 0;
-
         return true;
     }
-
     # Returns true if the post has a sample image.
     public function has_sample()
     {
         return !empty($this->sample_size);
     }
-
     # Returns true if the post has a sample image, and we're going to use it.
     public function use_sample($user = null)
     {
@@ -638,7 +610,6 @@ trait PostFileMethods
         else
             return CONFIG()->image_samples && $this->has_sample();
     }
-
     public function get_file_image($user = null)
     {
         return array(
@@ -654,7 +625,6 @@ trait PostFileMethods
     {
         if ($this->status == "deleted" or !$this->use_jpeg($user))
             return $this->get_file_image($user);
-
         return array(
             'url'    => $this->store_jpeg_url(),
             'size'   => $this->jpeg_size,
@@ -677,12 +647,10 @@ trait PostFileMethods
             'height' => $this->sample_height
         );
     }
-
     public function sample_url($user = null)
     {
         return $this->get_file_sample($user)['url'];
     }
-
     public function get_sample_width($user = null)
     {
         return $this->get_file_sample($user)['width'];
