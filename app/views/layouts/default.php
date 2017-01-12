@@ -5,6 +5,8 @@
   <title><?= $this->html_title() ?></title>
   <meta name="description" content="<?= CONFIG()->app_name ?>">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="android-icon-192x192.png" sizes="192x192">
+  <meta name="theme-color" content="#b5534a">
   <link rel="top" title="<?= CONFIG()->app_name ?>" href="/">
   <?php # The javascript-hide class is used to hide elements (eg. blacklisted posts) from JavaScript. ?>
   <script type="text/javascript">
