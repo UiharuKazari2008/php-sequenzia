@@ -1,5 +1,5 @@
 <div id="static-more">
-  <div id="title"><h2><?= $this->linkTo($this->imageTag('images/logo_small.png', ['alt' => CONFIG()->app_name, 'size' => '195x40', 'id' => 'logo']), 'root') ?></h2></div>
+  <div id="title"><h2><?= $this->linkTo($this->imageTag('images/logo_small.png', ['alt' => CONFIG()->app_name, 'size' => '146x30', 'id' => 'logo']), 'root') ?></h2></div>
   <div>
     <ul>
       <li><h4><?= $this->t('static_t1') ?></h4></li>
@@ -92,8 +92,8 @@
     </ul>
     <ul>
       <li><h4><?= $this->t('static_t11') ?></h4></li>
-      <li><?= $this->linkTo($this->t('static46'), 'https://github.com/myimouto/myimouto') ?></li>
-      <li><?= $this->linkTo(str_replace('Danbooru', 'Moebooru', $this->t('static47')), 'https://github.com/moebooru/moebooru') ?></li>
+      <li><?= $this->linkTo($this->t('static46'), 'https://code.acr.moe/kazari/sequenzia') ?></li>
+      <li><?= $this->linkTo(str_replace('Danbooru', 'myimouto', $this->t('static47')), 'https://github.com/moebooru/moebooru') ?></li>
     </ul>
   </div>
   <div>
