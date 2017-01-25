@@ -1,5 +1,8 @@
 <?php $this->provide('title', '/' . str_replace('_', ' ', $this->params()->tags)) ?>
 <div id="post-list">
+<?php if (current_user()->is_privileged_or_higher()) : ?>
+        <?= $this->partial('tag_script') ?>
+    <?php endif ?>
   <?php
     if ($this->tag_suggestions) :
       $total = count($this->tag_suggestions);
@@ -19,10 +22,6 @@
 
   <div class="content">
     <div class="sidebar" style="display: none;">
-    <?php if (current_user()->is_privileged_or_higher()) : ?>
-        <?= $this->partial('tag_script') ?>
-    <?php endif ?>
-
     <?php if ($this->showing_holds_only) : ?>
       <?php if (!$this->posts->blank()) : ?>
         <div style="margin-bottom: .5em;">
