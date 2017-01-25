@@ -649,7 +649,7 @@ div#post-view>div#right-col>div>div#note-container>div.note-box{background:#FFE;
 div#post-view>div#right-col>div>div#note-container>div.note-box>div.note-corner{background:black;bottom:0;cursor:se-resize;height:7px;position:absolute;right:0;width:7px}
 div#post-view>div#right-col>div>div#note-container>div.unsaved{background:#FFF;border:1px solid red}
 div#post-view>div#right-col>div>div#note-container>div.unsaved>div.note-corner{background:red}
-div#post-view>div#right-col>div>img{margin-right:5em;border:1px solid rgba(109, 0, 0, 0.54);}
+div#post-view>div#right-col>div>img{margin-right:5em}
 div#post-view>div#right-col>div#edit{margin-bottom:2em;padding:1em}
 div.quote>a{color:#581a21}
 div#related{margin:0 3em 1em 0}
@@ -671,7 +671,7 @@ div#static-index>div#links>a{margin:0 .5em}
 div#static-more>div{float:left;width:25%}
 div#static-more>div>ul{margin-top:2em}
 div#static-more>div>ul>li{list-style-type:none;margin:0}
-div.status-notice{background:black;border:2px solid #BF5050;margin:0 0 .5em;padding:5px 10px 5px 10px}
+div.status-notice{background:black;border:2px solid #BF5050;margin:0 0 .5em;padding:.5em}
 div.status-notice p{margin:0}
 div#tag-list{margin-bottom:2em;text-align:center}
 div#tag-list>a{padding-right:5px}
