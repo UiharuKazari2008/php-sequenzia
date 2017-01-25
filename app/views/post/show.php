@@ -11,8 +11,7 @@
       <script type="text/javascript">Post.register_resp(<?= json_encode(Post::batch_api_data(array($this->post))) ?>);</script>
     <?php endif ?>
 	<?php if (!current_user()->is_member_or_higher()) : ?>
-        <div class="status-notice">You must have an account to comment or edit posts<a href="/user/login">Login</a>
-        </div>
+        <div class="status-notice">You must have an account to comment or edit posts</div>
     <?php endif ?>
     <?= $this->partial('post/show_partials/status_notices', array('pools' => $this->pools)) ?>
 	
