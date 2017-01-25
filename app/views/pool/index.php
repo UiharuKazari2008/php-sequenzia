@@ -1,14 +1,4 @@
 <div id="pool-index">
-  <div style="margin-bottom: 2em;">
-    <?= $this->formTag([], ['method' => 'get'], function(){ ?>
-      <?php if ($this->params()->order) : ?>
-      <?= $this->hiddenFieldTag("order", $this->params()->order) ?>
-      <?php endif ?>
-      <?= $this->textFieldTag("query", $this->h($this->params()->query), ['size' => 40]) ?>
-      <?= $this->submitTag($this->t('.search'), ['name' => '']) ?>
-    <?php }) ?>
-  </div>
-
   <?= $this->imageTag('images/blank.gif', ['id' => 'hover-thumb', 'alt' => '', 'style' => 'position: absolute; display: none; border: 2px solid #000; right: 42%;']) ?>
 
   <table width="100%" class="highlightable">

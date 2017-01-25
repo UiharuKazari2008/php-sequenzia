@@ -1,12 +1,4 @@
 <div id="artist-index">
-  <div id="search-form" style="margin-bottom: 1em;">
-    <?= $this->formTag([], ['method' => 'get'], function(){ ?>
-      <?= $this->textFieldTag('name', $this->params()->name, ['size' => 40]) ?> <?= $this->submitTag($this->t('.search')) ?>
-      <br />
-      <?= $this->selectTag('order', [[$this->t('.name') => 'name', $this->t('.date') => 'date'], ($this->params()->order ?: '')]) ?>
-    <?php }) ?>
-  </div>
-
   <?php if (!$this->artists->blank()) : ?>
     <table class="highlightable" width="100%">
       <thead>
