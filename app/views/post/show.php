@@ -12,6 +12,10 @@
     <?php endif ?>
 
     <?= $this->partial('post/show_partials/status_notices', array('pools' => $this->pools)) ?>
+	<?php if (!current_user()->is_member_or_higher()) : ?>
+        <div class="status-notice">You must be a member to comment or edit posts! <a href="/user/login">Login</a>
+        </div>
+    <?php endif ?>
     <div class="sidebar">
 	  <?= $this->partial('post/show_partials/related_posts_panel') ?>
 	  <?php if ($this->post->can_be_seen_by(current_user())) : ?>
