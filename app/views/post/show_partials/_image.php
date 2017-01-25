@@ -1,7 +1,7 @@
 <?php if (!$this->post->is_deleted()) : ?>
   <div<?php if (CONFIG()->dblclick_resize_image) echo ' ondblclick="Post.resize_image(); return false;"' ?>>
     <?php if (!$this->post->can_be_seen_by(current_user())) : ?>
-      <p><?= $this->t('.text') ?></p>
+      <p>This post is restricted</p>
     <?php elseif ($this->post->image()) : ?>
       <div id="note-container">
         <?php foreach ($this->post->active_notes() as $note) : ?>

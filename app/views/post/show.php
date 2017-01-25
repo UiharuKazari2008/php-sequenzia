@@ -14,9 +14,11 @@
     <?= $this->partial('post/show_partials/status_notices', array('pools' => $this->pools)) ?>
     <div class="sidebar">
 	  <?= $this->partial('post/show_partials/related_posts_panel') ?>
+	  <?php if ($this->post->can_be_seen_by(current_user())) : ?>
 	  <?= $this->partial('tags') ?>
       <?= $this->partial('post/show_partials/statistics_panel') ?>
       <?= $this->partial('post/show_partials/options_panel') ?>
+	  <?php endif ?>
       <br />
 	  <?php if (CONFIG()->can_show_ad('post#show-sidebar', current_user())) : ?>
 		<?= $this->partial('vertical') ?>
@@ -26,12 +28,15 @@
       <?php if (CONFIG()->can_show_ad('post#show-top', current_user())) : ?>
         <?= $this->partial('horizontal', ['position' => 'top']) ?>
       <?php endif ?>
-      
+      <?php if (!$this->post->can_be_seen_by(current_user())) : ?>
+      <p>This post is restricted</p>
+	  <?php endif ?>
+	   <?php if ($this->post->can_be_seen_by(current_user())) : ?>
       <?= $this->partial('post/show_partials/image') ?>
       <?= $this->partial('post/show_partials/image_footer', ['post_id' => $this->post->id]) ?>
       <?= $this->partial('post/show_partials/edit') ?>
       <?= $this->partial('post/show_partials/comments') ?>
-      
+	  <?php endif ?>
       <?php if (CONFIG()->can_show_ad('post#show-bottom', current_user())) : ?>
         <?= $this->partial('horizontal', ['position' => 'bottom']) ?>
       <?php endif ?>

@@ -17,7 +17,8 @@
     endif
   ?>
 
-  <div class="sidebar" style="display: none;">
+  <div class="content">
+    <div class="sidebar" style="display: none;">
     <?php if (current_user()->is_privileged_or_higher()) : ?>
         <?= $this->partial('tag_script') ?>
     <?php endif ?>
@@ -34,7 +35,6 @@
 
     <?= $this->partial('blacklists') ?>
   </div>
-  <div class="content">
   <?php if (current_user()->is_member_or_lower()) : ?>
         <div class="status-notice">You’re not logged in! You are required to have an account to access  <a href="/wiki/show?title=restricted_content">restricted content</a>! <a href="/user/login">Login</a>
         </div>
