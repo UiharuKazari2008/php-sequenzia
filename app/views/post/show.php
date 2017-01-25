@@ -17,7 +17,9 @@
 	  <?php if ($this->post->can_be_seen_by(current_user())) : ?>
 	  <?= $this->partial('tags') ?>
       <?= $this->partial('post/show_partials/statistics_panel') ?>
+	  <?php if (current_user()->is_member_or_higher()) : ?>
       <?= $this->partial('post/show_partials/options_panel') ?>
+	  <?php endif ?>
 	  <?php endif ?>
       <br />
 	  <?php if (CONFIG()->can_show_ad('post#show-sidebar', current_user())) : ?>
@@ -34,8 +36,10 @@
 	   <?php if ($this->post->can_be_seen_by(current_user())) : ?>
       <?= $this->partial('post/show_partials/image') ?>
       <?= $this->partial('post/show_partials/image_footer', ['post_id' => $this->post->id]) ?>
-      <?= $this->partial('post/show_partials/edit') ?>
-      <?= $this->partial('post/show_partials/comments') ?>
+      <?php if (current_user()->is_member_or_higher()) : ?>
+	  <?= $this->partial('post/show_partials/edit') ?>
+      <?php endif ?>
+	  <?= $this->partial('post/show_partials/comments') ?>
 	  <?php endif ?>
       <?php if (CONFIG()->can_show_ad('post#show-bottom', current_user())) : ?>
         <?= $this->partial('horizontal', ['position' => 'bottom']) ?>
