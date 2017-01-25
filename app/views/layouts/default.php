@@ -135,24 +135,66 @@ container
   <?= $this->partial('layouts/news') ?>
   <div id="header">
     <div id="title"><h2 id="site-title"><?= $this->linkTo($this->imageTag('images/logo_small.png', array('alt' => CONFIG()->app_name, 'size' => '146x30', 'id' => 'logo')), CONFIG()->url_base) ?><div style="margin-right: 0.0em;">
-  <?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
-    <div style="margin:0;padding:0;display:inline"></div>
-    <div>
-	  <?php
-		if ($this->request()->controller() == 'post') : ?>
-			<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '60', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
-			<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
-		 <?php endif ?>
-    </div>
-  <?php }) ?>
+	<?php if ($this->request()->controller() == 'post') : ?>
+		<?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
+			<div style="margin:0;padding:0;display:inline"></div>
+			<div>
+					<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '60', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
+					<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
+					<?php if ($this->request()->action() == 'index') : ?>
+						<div style="display: inline-block; margin: 0 0 0 -8px;" id="mode-box" class="advanced-editing">
+						  <form onsubmit="return false;" action="">
+							<div>
+							  <select name="mode" id="mode" onchange="PostModeMenu.change()" onkeyup="PostModeMenu.change()" style="font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px; color: #7d3030;">
+								<option value="view">View</option>
+								<option value="edit">Edit</option>
+								<option value="rating-s">Rate:S</option>
+								<option value="rating-q">Rate:Q</option>
+								<option value="rating-e">Rate:E</option>
+								<?php if (current_user()->is_privileged_or_higher()) : ?>
+								  <option value="lock-rating">Lock rating</option>
+								  <option value="lock-note">Lock notes</option>
+								<?php endif ?>
+								<?php if (current_user()->is_mod_or_higher()) : ?>
+								  <option value="approve">Approve</option>
+								<?php endif ?>
+								<option value="flag">Flag</option>
+								<option value="apply-tag-script">Script</option>
+								<option value="reparent-quick">Reparent</option>
+								<?php if ($this->searching_pool) : ?>
+								  <option value="remove-from-pool">Remove from Pool</option>
+								<?php endif ?>
+								<?php if (CONFIG()->delete_post_mode && current_user()->is_admin()) : ?>
+								  <option value="destroy">Delete posts</option>
+								<?php endif ?>
+							  </select>
+							</div>
+						  </form>
+						</div>
+					<?php endif ?>
+				</div>
+		<?php }) ?>
+	<?php endif ?>
+	<?php if ($this->request()->controller() == 'tag') : ?>
+		<?= $this->formTag(array('action' => 'index'), array('method' => 'get'), function(){ ?>
+			<table class="form">
+			  <?= $this->textFieldTag("name", $this->h($this->params()->name), array('size' => '40', 'autocomplete' => 'off', 'placeholder' => 'Search Tags...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('type', array(array_merge(array('Any' => 'any'), array_unique(CONFIG()->tag_types)), $this->params()->type), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px; color: #7d3030;')) ?> <?= $this->selectTag('order', array(array('Name' => 'name', 'Count' => 'count', 'Date' => 'date'), $this->params()->order), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px; color: #7d3030;')) ?>
+			</table>
+		<?php }) ?>
+	<?php endif ?>	
+	<?php if ($this->request()->controller() == 'artist') : ?>
+	<?= $this->formTag([], ['method' => 'get'], function(){ ?>
+      <?= $this->textFieldTag('name', $this->params()->name, array('size' => '40', 'autocomplete' => 'off', 'placeholder' => 'Search Artists...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('order', [['Name' => 'name', 'Date' => 'date'], ($this->params()->order ?: '')], ['style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 -8px; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px; color: #7d3030;']) ?>
+    <?php }) ?>
+	<?php endif ?>
 </div>
  </h2></div>
     <?= $this->partial('layouts/menu') ?>
   </div>
   <?= $this->partial('layouts/login') ?>
 
-  <?php if (CONFIG()->server_host == "yande.re") : ?>
-    <div style="display: none;">Danbooru-based image board with a specialization in high-quality images.</div>
+  <?php if (CONFIG()->server_host == "sequenzia.moe") : ?>
+    <div style="display: none;">The global image database!</div>
   <?php endif ?>
 
   <!--[if lt IE 7]>

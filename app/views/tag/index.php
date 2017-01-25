@@ -1,33 +1,3 @@
-<div>
-  <?= $this->formTag(array('action' => 'index'), array('method' => 'get'), function(){ ?>
-    <table class="form">
-      <tbody>
-        <tr>
-          <th width="15%">
-            <label for="name"><?= $this->t('tag_name') ?></label>
-            <p><?= $this->t('tag_wild') ?></p>
-          </th>
-          <td width="85%"><?= $this->textFieldTag("name", $this->h($this->params()->name), array('size' => '40')) ?></td>
-        </tr>
-        <tr>
-          <th><label for="type"><?= $this->t('tag_type') ?></label></th>
-          <td><?= $this->selectTag('type', array(array_merge(array('Any' => 'any'), array_unique(CONFIG()->tag_types)), $this->params()->type)) ?></td>
-        </tr>
-        <tr>
-          <th><label for="order"><?= $this->t('tag_order') ?></label></th>
-          <td><?= $this->selectTag('order', array(array('Name' => 'name', 'Count' => 'count', 'Date' => 'date'), $this->params()->order)) ?></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td><?= $this->submitTag($this->t('tag_search')) ?></td>
-          <td></td>
-        </tr>
-      </tfoot>
-    </table>
-  <?php }) ?>
-</div>
-
 <table width="100%" class="highlightable">
   <thead>
     <tr>

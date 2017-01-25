@@ -565,7 +565,7 @@ ul.link-page>li{list-style-type:none;margin:0;padding:0}
 .tag-completion-box ul{list-style-type:none;margin:.5em}
 .tag-completion-box .completed-tag{cursor:default;margin:0;position:relative}
 .tag-completion-box .completed-tag-alias{float:right;margin-left:1em}
-.tag-completion-box .completed-tag.focused{background-color:#52003}
+.tag-completion-box .completed-tag.focused{background-color:#880005}
 .tag-completion-box .completed-tag.recent-tag{font-weight:bold}
 .tag-completion-box .remove-recent-tag{background-color:#002;left:-1.5em;padding-left:.25em;padding-right:.5em;position:absolute}
 .added{color:#0c0}
