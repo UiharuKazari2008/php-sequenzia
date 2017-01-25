@@ -33,9 +33,6 @@
     <?php endif ?>
 
     <?= $this->partial('blacklists') ?>
-	
-    <?= $this->partial('vertical') ?>
-    <?php endif ?>
   </div>
   <div class="content">
   <?php if (current_user()->is_member_or_lower()) : ?>
