@@ -36,7 +36,7 @@
     <?= $this->partial('blacklists') ?>
   </div>
   <?php if (!current_user()->is_member_or_higher()) : ?>
-        <div class="status-notice">You are required to have an account to see sensitive or <a href="/wiki/show?title=restricted_content">restricted content</a> or !</div>
+        <div class="status-notice">You are required to have an account to access sensitive or <a href="/wiki/show?title=restricted_content">restricted content</a>!</div>
     <?php endif ?>
   <?php if ($this->searching_pool) : ?>
         <div class="status-notice">

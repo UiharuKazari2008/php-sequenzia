@@ -35,7 +35,7 @@
         <?= $this->partial('horizontal', ['position' => 'top']) ?>
       <?php endif ?>
       <?php if (!$this->post->can_be_seen_by(current_user())) : ?>
-      <p>This post is restricted</p>
+      <div class="status-notice">You are required to have an account to access <a href="/wiki/show?title=restricted_content">restricted content</a>!</div>
 	  <?php endif ?>
 	   <?php if ($this->post->can_be_seen_by(current_user())) : ?>
       <?= $this->partial('post/show_partials/image') ?>
