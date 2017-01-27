@@ -112,7 +112,6 @@
 <?php if ($this->contentFor('subnavbar')) : ?>
   <!-- Align the links to the content, not the window. -->
   <div style="clear: both;">
-    <div class="sidebar">&nbsp;</div>
     <div class="footer" style="clear: none;">
       <ul class="flat-list" id="subnavbar">
         <?= $this->content('subnavbar') ?>
