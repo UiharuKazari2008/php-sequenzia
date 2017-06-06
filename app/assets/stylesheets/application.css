@@ -1383,9 +1383,13 @@ a.directlink:hover > .directlink-info {
 .has-parent .directlink-icon { display: none; }
 .flagged .directlink-icon { display: none; }
 .pending .directlink-icon { display: none; }
-.extremeimg .directlink-icon-small .directlink-icon-large { display: none; }
-.largeimg .directlink-icon-small .directlink-icon-uhd { display: none; }
-.smallimg .directlink-icon-large .directlink-icon-uhd { display: none; }
+.extremeimg .directlink-icon-small { display: none; }
+.extremeimg .directlink-icon-large { display: none; }
+.largeimg .directlink-icon-small { display: none; }
+.largeimg .directlink-icon-uhd { display: none; }
+
+.smallimg .directlink-icon-large { display: none; } 
+.smallimg .directlink-icon-uhd { display: none; }
 
 .similar .directlink-icon { display: none; }
 
