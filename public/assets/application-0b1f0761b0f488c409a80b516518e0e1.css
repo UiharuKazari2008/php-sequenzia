@@ -704,9 +704,11 @@ ul#post-list-posts li{display:inline;float:left;list-style-type:none;margin:0 0 
 img.preview{vertical-align:top}
 a.directlink{background:#191919;display:block;font-size:12px;height:15px;margin-top:4px;padding:1px 0;text-align:center;white-space:nowrap}
 a.largeimg{background:#312f0d}
+a.extremeimg{background:#31160d}
 .highlighted-post>a.directlink{background:#2f2f2f}
 a.directlink:hover{background-image:none}
 a.largeimg:hover{background-image:none}
+a.extremeimg:hover{background-image:none}
 a.directlink>span.directlink-res{color:#982524;display:none;margin:0;padding:0;vertical-align:top}
 a.directlink:hover>span.directlink-res{display:inline}
 a.directlink:hover>.directlink-icon{display:none}
@@ -723,8 +725,9 @@ a.directlink:hover>.directlink-info{display:none}
 .has-parent .directlink-icon{display:none}
 .flagged .directlink-icon{display:none}
 .pending .directlink-icon{display:none}
-.largeimg .directlink-icon-small{display:none}
-.smallimg .directlink-icon-large{display:none}
+.extremeimg .directlink-icon-small .directlink-icon-large{display:none}
+.largeimg .directlink-icon-small .directlink-icon-uhd{display:none}
+.smallimg .directlink-icon-large .directlink-icon-uhd{display:none}
 .similar .directlink-icon{display:none}
 .top-corner-float{background:#222;border:solid #000 2px;padding:6px;position:fixed;right:2px;top:2px;z-index:5;font-size: 12px}
 .post-hover{background:#222;border:2px solid #000;max-width:30em;min-width:20em;padding:2px;position:absolute;z-index:2}
