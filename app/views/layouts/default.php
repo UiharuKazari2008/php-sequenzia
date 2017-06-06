@@ -54,11 +54,11 @@
   }
 
   var $      = jQuery;
-  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC!\nThis site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or content illegal in the United States of America. This database is well regulated by its moderators and all posts are pending until approval. Please see SERVICE USE POLICY on ACR Docs too other policies that apply to this site.\nContent such as cate2, cate3, guro, loli, rape, and other are NOT accessible to the public or any bot unless you have an account, you must wait for a OPEN ACCESS day to register or view such content.';
+  var notice = 'WARNING! THIS SITE HAS MIXED CONTENT AND IS NOT SAFE FOR WORK OR PUBLIC!\nThis site contains mixed content and has images containing erotic, grotesque acts, or acts of violence. NO content portrays any real life events or illegal content. This database is well regulated by its moderators and all posts are pending until approval.\nSome content is NOT accessible to the public or any bot, you must register or login to view such content.';
   
   notice = notice.replace(/\n/g, "<br />");
-  var accept = 'YES, I fully understand what content I will see!';
-  var cancel = 'EXIT, Take me to somewhere normal';
+  var accept = 'YES, not a normie!';
+  var cancel = 'EXIT';
 
   var container = $('<div>')
     .css({
@@ -120,7 +120,7 @@ container
                   $('<button>')
                     .html(cancel)
                     .click(function() {
-                      window.location.href = 'https://plus.google.com/u/1/communities/114928521647105863223';
+                      window.location.href = 'https://acr.moe';
                     })
                 )
             )
@@ -178,13 +178,13 @@ container
 	<?php if ($this->request()->controller() == 'tag') : ?>
 		<?= $this->formTag(array('action' => 'index'), array('method' => 'get'), function(){ ?>
 			<table class="form">
-			  <?= $this->textFieldTag("name", $this->h($this->params()->name), array('size' => '40', 'autocomplete' => 'off', 'placeholder' => 'Search Tags...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('type', array(array_merge(array('Any' => 'any'), array_unique(CONFIG()->tag_types)), $this->params()->type), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?> <?= $this->selectTag('order', array(array('Name' => 'name', 'Count' => 'count', 'Date' => 'date'), $this->params()->order), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?>
+			  <?= $this->textFieldTag("name", $this->h($this->params()->name), array('size' => '30', 'autocomplete' => 'off', 'placeholder' => 'Search Tags...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('type', array(array_merge(array('Any' => 'any'), array_unique(CONFIG()->tag_types)), $this->params()->type), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?> <?= $this->selectTag('order', array(array('Name' => 'name', 'Count' => 'count', 'Date' => 'date'), $this->params()->order), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?>
 			</table>
 		<?php }) ?>
 	<?php endif ?>	
 	<?php if ($this->request()->controller() == 'artist') : ?>
 	<?= $this->formTag([], ['method' => 'get'], function(){ ?>
-      <?= $this->textFieldTag('name', $this->params()->name, array('size' => '40', 'autocomplete' => 'off', 'placeholder' => 'Search Artists...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('order', [['Name' => 'name', 'Date' => 'date'], ($this->params()->order ?: '')], ['style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 -8px; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;']) ?>
+      <?= $this->textFieldTag('name', $this->params()->name, array('size' => '30', 'autocomplete' => 'off', 'placeholder' => 'Search Artists...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('order', [['Name' => 'name', 'Date' => 'date'], ($this->params()->order ?: '')], ['style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 -8px; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;']) ?>
     <?php }) ?>
 	<?php endif ?>
 	<?php if ($this->request()->controller() == 'pool') : ?>
@@ -192,7 +192,7 @@ container
       <?php if ($this->params()->order) : ?>
       <?= $this->hiddenFieldTag("order", $this->params()->order) ?>
       <?php endif ?>
-      <?= $this->textFieldTag("query", $this->h($this->params()->query), ['size' => '40', 'autocomplete' => 'off', 'placeholder' => 'Search Pools...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;']) ?>
+      <?= $this->textFieldTag("query", $this->h($this->params()->query), ['size' => '30', 'autocomplete' => 'off', 'placeholder' => 'Search Pools...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;']) ?>
     <?php }) ?>
 	<?php endif ?>
 </div>
