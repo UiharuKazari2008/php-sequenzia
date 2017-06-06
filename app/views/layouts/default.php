@@ -152,8 +152,8 @@ container
 								<option value="rating-q">Rate:Q</option>
 								<option value="rating-e">Rate:E</option>
 								<?php if (current_user()->is_privileged_or_higher()) : ?>
-								  <option value="lock-rating">Lock rating</option>
-								  <option value="lock-note">Lock notes</option>
+								  <option value="lock-rating">L-Rating</option>
+								  <option value="lock-note">L-Notes</option>
 								<?php endif ?>
 								<?php if (current_user()->is_mod_or_higher()) : ?>
 								  <option value="approve">Approve</option>
@@ -162,10 +162,10 @@ container
 								<option value="apply-tag-script">Script</option>
 								<option value="reparent-quick">Reparent</option>
 								<?php if ($this->searching_pool) : ?>
-								  <option value="remove-from-pool">Remove from Pool</option>
+								  <option value="remove-from-pool">D.F. Pool</option>
 								<?php endif ?>
 								<?php if (CONFIG()->delete_post_mode && current_user()->is_admin()) : ?>
-								  <option value="destroy">Delete posts</option>
+								  <option value="destroy">Delete</option>
 								<?php endif ?>
 							  </select>
 							</div>
@@ -178,13 +178,13 @@ container
 	<?php if ($this->request()->controller() == 'tag') : ?>
 		<?= $this->formTag(array('action' => 'index'), array('method' => 'get'), function(){ ?>
 			<table class="form">
-			  <?= $this->textFieldTag("name", $this->h($this->params()->name), array('size' => '30', 'autocomplete' => 'off', 'placeholder' => 'Search Tags...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('type', array(array_merge(array('Any' => 'any'), array_unique(CONFIG()->tag_types)), $this->params()->type), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?> <?= $this->selectTag('order', array(array('Name' => 'name', 'Count' => 'count', 'Date' => 'date'), $this->params()->order), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?>
+			  <?= $this->textFieldTag("name", $this->h($this->params()->name), array('size' => '35', 'autocomplete' => 'off', 'placeholder' => 'Search Tags...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('type', array(array_merge(array('Any' => 'any'), array_unique(CONFIG()->tag_types)), $this->params()->type), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?> <?= $this->selectTag('order', array(array('Name' => 'name', 'Count' => 'count', 'Date' => 'date'), $this->params()->order), array('style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 0; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;')) ?>
 			</table>
 		<?php }) ?>
 	<?php endif ?>	
 	<?php if ($this->request()->controller() == 'artist') : ?>
 	<?= $this->formTag([], ['method' => 'get'], function(){ ?>
-      <?= $this->textFieldTag('name', $this->params()->name, array('size' => '30', 'autocomplete' => 'off', 'placeholder' => 'Search Artists...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('order', [['Name' => 'name', 'Date' => 'date'], ($this->params()->order ?: '')], ['style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 -8px; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;']) ?>
+      <?= $this->textFieldTag('name', $this->params()->name, array('size' => '35', 'autocomplete' => 'off', 'placeholder' => 'Search Artists...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?> <?= $this->selectTag('order', [['Name' => 'name', 'Date' => 'date'], ($this->params()->order ?: '')], ['style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 -8px; border-style: dotted; background: #2b0000; border-color: darkred; border-width: 0 0 1px 1px; color: #7d3030;']) ?>
     <?php }) ?>
 	<?php endif ?>
 	<?php if ($this->request()->controller() == 'pool') : ?>
@@ -192,7 +192,7 @@ container
       <?php if ($this->params()->order) : ?>
       <?= $this->hiddenFieldTag("order", $this->params()->order) ?>
       <?php endif ?>
-      <?= $this->textFieldTag("query", $this->h($this->params()->query), ['size' => '30', 'autocomplete' => 'off', 'placeholder' => 'Search Pools...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;']) ?>
+      <?= $this->textFieldTag("query", $this->h($this->params()->query), ['size' => '35', 'autocomplete' => 'off', 'placeholder' => 'Search Pools...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;']) ?>
     <?php }) ?>
 	<?php endif ?>
 </div>
