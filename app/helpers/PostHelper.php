@@ -83,6 +83,11 @@ class PostHelper extends Rails\ActionView\Helper
 			<img class="directlink-icon directlink-icon-uhd" src="/images/ddl_uhd.gif" alt="">
             <img class="directlink-icon directlink-icon-large" src="/images/ddl_large.gif" alt="">
             <img class="directlink-icon directlink-icon-small" src="/images/ddl.gif" alt="">
+			<img class="directlink-icon file-jpg" src="/images/type-jpg.gif" alt="">
+			<img class="directlink-icon file-png" src="/images/type-png.gif" alt="">
+			<img class="directlink-icon file-gif" src="/images/type-gif.gif" alt="">
+			<img class="directlink-icon file-mp4" src="/images/type-mp4.gif" alt="">
+			<img class="directlink-icon file-flv" src="/images/type-flv.gif" alt="">
 			<img class="directlink-icon image-rating-s" src="/images/rate-s.gif" alt="">
 			<img class="directlink-icon image-rating-q" src="/images/rate-q.gif" alt="">
 			<img class="directlink-icon image-rating-e" src="/images/rate-e.gif" alt="">
@@ -100,6 +105,17 @@ class PostHelper extends Rails\ActionView\Helper
 			$ddl_class .= " extremeimg";
 		else 
 			$ddl_class .= ($post->width > 1920 || $post->height > 1500 )?    " largeimg":" smallimg";
+		
+		if ($post->file_ext == "jpg" || $post->file_ext == "jpeg")
+			$ddl_class .= " file-jpg"
+		if ($post->file_ext == "png")
+			$ddl_class .= " file-png"
+		if ($post->file_ext == "gif")
+			$ddl_class .= " file-gif"
+		if ($post->file_ext == "flv")
+			$ddl_class .= " file-flv"
+		if ($post->file_ext == "mp4")
+			$ddl_class .= " file-mp4"
 		
 		if ($post->rating == "s")
 			$ddl_class .= " rating-s";
