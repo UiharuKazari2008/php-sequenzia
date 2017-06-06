@@ -19,7 +19,6 @@
       unset($total, $count);
     endif
   ?>
-<center>
   <div class="content">
     <div class="sidebar" style="display: none;">
     <?php if ($this->showing_holds_only) : ?>
@@ -72,7 +71,6 @@
       <?= $this->partial('horizontal', ['position' => 'bottom', 'center' => true]) ?>
     <?php endif ?>
   </div>
-  </center>
 </div>
 
 <?= $this->contentFor('post_cookie_javascripts', function() { ?>
