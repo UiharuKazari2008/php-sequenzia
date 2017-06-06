@@ -101,13 +101,13 @@ class PostHelper extends Rails\ActionView\Helper
 		else 
 			$ddl_class .= ($post->width > 1920 || $post->height > 1500 )?    " largeimg":" smallimg";
 		
-		if ($post->rating = s)
+		if ($post->rating == "s")
 			$ddl_class .= " rating-s";
 		
-		if ($post->rating = q)
+		if ($post->rating == "q")
 			$ddl_class .= " rating-q";
 		
-		if ($post->rating = e)
+		if ($post->rating == e"")
 			$ddl_class .= " rating-e";
 		
         if (!empty($options['similarity'])) {
