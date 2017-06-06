@@ -1348,6 +1348,18 @@ a.largeimg:hover {
         background-image: none;
 }
 
+a.rating-e:hover {
+        background-image: none;
+}
+
+a.rating-q:hover {
+        background-image: none;
+}
+
+a.rating-s:hover {
+        background-image: none;
+}
+
 a.extremeimg:hover {
         background-image: none;
 }
@@ -1383,13 +1395,19 @@ a.directlink:hover > .directlink-info {
 .has-parent .directlink-icon { display: none; }
 .flagged .directlink-icon { display: none; }
 .pending .directlink-icon { display: none; }
+
 .extremeimg .directlink-icon-small { display: none; }
 .extremeimg .directlink-icon-large { display: none; }
+
 .largeimg .directlink-icon-small { display: none; }
 .largeimg .directlink-icon-uhd { display: none; }
 
 .smallimg .directlink-icon-large { display: none; } 
 .smallimg .directlink-icon-uhd { display: none; }
+
+.rating-e .image-rating-s,.rating-e .image-rating-q { display: none; }
+.rating-q .image-rating-s,.rating-q .image-rating-e { display: none; }
+.rating-s .image-rating-q,.rating-s .image-rating-e { display: none; }
 
 .similar .directlink-icon { display: none; }
 

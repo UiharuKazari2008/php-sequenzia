@@ -28,7 +28,7 @@ class PostHelper extends Rails\ActionView\Helper
         
         $image_id = isset($options['image_id']) ? 'id="'.$options['image_id'].'"' : null;
         
-        $image_title = $is_post ? $this->h("Rating: ".$post->pretty_rating()." Score: ".$post->score." Tags: ".$this->h($post->cached_tags." User: ".$post->author())) : null;
+        $image_title = $is_post ? $this->h("Rating: ".$post->pretty_rating()." / Score: ".$post->score." / Tags: ".$this->h($post->cached_tags." / User: ".$post->author())) : null;
         
         $link_onclick = isset($options['onclick']) ? 'onclick="'.$options['onclick'].'"' : null;
         
@@ -83,9 +83,12 @@ class PostHelper extends Rails\ActionView\Helper
 			<img class="directlink-icon directlink-icon-uhd" src="/images/ddl_uhd.gif" alt="">
             <img class="directlink-icon directlink-icon-large" src="/images/ddl_large.gif" alt="">
             <img class="directlink-icon directlink-icon-small" src="/images/ddl.gif" alt="">
+			<img class="directlink-icon image-rating-s" src="/images/rate-s.gif" alt="">
+			<img class="directlink-icon image-rating-q" src="/images/rate-q.gif" alt="">
+			<img class="directlink-icon image-rating-e" src="/images/rate-e.gif" alt="">
             <img class="parent-display" src="/images/post-star-parent.gif" alt="">
             <img class="child-display" src="/images/post-star-child.gif" alt="">
-             <img class="flagged-display" src="/images/post-star-flagged.gif" alt="">
+            <img class="flagged-display" src="/images/post-star-flagged.gif" alt="">
             <img class="pending-display" src="/images/post-star-pending.gif" alt="">
         </span>
         ';
@@ -97,6 +100,15 @@ class PostHelper extends Rails\ActionView\Helper
 			$ddl_class .= " extremeimg";
 		else 
 			$ddl_class .= ($post->width > 1920 || $post->height > 1500 )?    " largeimg":" smallimg";
+		
+		if ($post->rating = s)
+			$ddl_class .= " rating-s";
+		
+		if ($post->rating = q)
+			$ddl_class .= " rating-q";
+		
+		if ($post->rating = e)
+			$ddl_class .= " rating-e";
 		
         if (!empty($options['similarity'])) {
             $icon = '<img src="'.$post->service_icon().'" alt="'.$post->service().'" class="service-icon" id="source">';
