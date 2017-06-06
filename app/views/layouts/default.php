@@ -139,7 +139,7 @@ container
 		<?= $this->formTag('post#index', array('method' => 'get', 'accept-charset' => 'UTF-8'), function(){ ?>
 			<div style="margin:0;padding:0;display:inline"></div>
 			<div>
-					<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '60', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
+					<?= $this->textFieldTag("tags", $this->h($this->params()->tags), array('size' => '35', 'autocomplete' => 'off', 'placeholder' => 'Search Posts...', 'style' => 'font-size: 14pt; padding: 0 0 1px 4px; margin: 4px 0 0 8px; border-style: dotted; background: #2b0000;')) ?>
 					<?= $this->tag_completion_box('$("tags")', ['$("tags").up("form")', '$("tags")', null], true) ?>
 					<?php if ($this->request()->action() == 'index') : ?>
 						<div style="display: inline-block; margin: 0 0 0 -8px;" id="mode-box" class="advanced-editing">
