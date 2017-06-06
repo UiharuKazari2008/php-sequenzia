@@ -151,12 +151,12 @@ Data entered here will be applied to all posts.</p>
       </tbody>
     </table>
 
-    <div id="related"><em>None</em></div>
+    <div id="related"><em>None or Fault found</em></div>
   </div>
 </form>
 
-<div id="post-list" style="display:none">
-  <ul id="post-list-posts"></ul>
+<div id="post-list">
+  <ul id="post-list-posts" style="display:none"></ul>
 </div>
 
 <script>
