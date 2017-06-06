@@ -179,7 +179,7 @@ Import = {
   start: function() {
     this.busy = true
     $('description').hide()
-    $('posts-details').show()
+    //$('posts-details').show()
     
     rating = this.get_rating()
     
