@@ -107,7 +107,7 @@ class PostHelper extends Rails\ActionView\Helper
 		if ($post->rating == "q")
 			$ddl_class .= " rating-q";
 		
-		if ($post->rating == e"")
+		if ($post->rating == "e")
 			$ddl_class .= " rating-e";
 		
         if (!empty($options['similarity'])) {
