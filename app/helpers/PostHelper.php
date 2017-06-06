@@ -80,6 +80,7 @@ class PostHelper extends Rails\ActionView\Helper
         
         $directlink_info = '
         <span class="directlink-info">
+			<img class="directlink-icon directlink-icon-uhd" src="/images/ddl_uhd.gif" alt="">
             <img class="directlink-icon directlink-icon-large" src="/images/ddl_large.gif" alt="">
             <img class="directlink-icon directlink-icon-small" src="/images/ddl.gif" alt="">
             <img class="parent-display" src="/images/post-star-parent.gif" alt="">
@@ -91,7 +92,13 @@ class PostHelper extends Rails\ActionView\Helper
         $li_class = "";
 
         $ddl_class = "directlink";
-        $ddl_class .= ($post->width > 1920 || $post->height > 1500 )?    " largeimg":" smallimg";
+		
+		if ($post->width >= 3500 || $post->height >= 2600 )
+			$ddl_class .= " extremeimg"
+		elseif ($post->width >= 1920 || $post->height >= 1500 )
+			$ddl_class .= " largeimg"
+		else
+			$ddl_class .= " smallimg";
 
         if (!empty($options['similarity'])) {
             $icon = '<img src="'.$post->service_icon().'" alt="'.$post->service().'" class="service-icon" id="source">';

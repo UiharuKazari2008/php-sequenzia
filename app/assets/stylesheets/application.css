@@ -1328,6 +1328,10 @@ a.directlink {
         white-space: nowrap;
 }
 
+a.extremeimg {
+		background: #111;
+}
+
 a.largeimg {
         background: #111;
 }
@@ -1341,6 +1345,10 @@ a.directlink:hover {
 }
 
 a.largeimg:hover {
+        background-image: none;
+}
+
+a.extremeimg:hover {
         background-image: none;
 }
 
@@ -1375,8 +1383,9 @@ a.directlink:hover > .directlink-info {
 .has-parent .directlink-icon { display: none; }
 .flagged .directlink-icon { display: none; }
 .pending .directlink-icon { display: none; }
-.largeimg .directlink-icon-small { display: none; }
-.smallimg .directlink-icon-large { display: none; }
+.extremeimg .directlink-icon-small .directlink-icon-large { display: none; }
+.largeimg .directlink-icon-small .directlink-icon-uhd { display: none; }
+.smallimg .directlink-icon-large .directlink-icon-uhd { display: none; }
 
 .similar .directlink-icon { display: none; }
 
