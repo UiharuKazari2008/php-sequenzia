@@ -96,8 +96,8 @@ Data entered here will be applied to all posts.</p>
     
     <div id="delete-dupes" style="display:none">
     <!--
-      <a id="delete-dupes-link" href="#">Delete dupes</a>
-    -->
+      
+    --><a id="delete-dupes-link" href="#">Delete dupes</a>
     </div>
   </div>
 </div>
@@ -155,7 +155,7 @@ Data entered here will be applied to all posts.</p>
   </div>
 </form>
 
-<div id="post-list">
+<div id="post-list" style="display:none">
   <ul id="post-list-posts"></ul>
 </div>
 
