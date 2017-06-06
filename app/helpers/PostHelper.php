@@ -94,11 +94,9 @@ class PostHelper extends Rails\ActionView\Helper
         $ddl_class = "directlink";
 		
 		if ($post->width >= 3500 || $post->height >= 2600 )
-			$ddl_class .= " extremeimg"
-		else
-		{
+			$ddl_class .= " extremeimg";
+		else 
 			$ddl_class .= ($post->width > 1920 || $post->height > 1500 )?    " largeimg":" smallimg";
-		}
 		
         if (!empty($options['similarity'])) {
             $icon = '<img src="'.$post->service_icon().'" alt="'.$post->service().'" class="service-icon" id="source">';
