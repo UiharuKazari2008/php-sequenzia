@@ -728,7 +728,7 @@ a.directlink:hover>.directlink-info{display:none}
 .extremeimg .directlink-icon-small {display:none}
 .extremeimg .directlink-icon-large{display:none}
 .largeimg .directlink-icon-small {display:none}
-.largeimg.directlink-icon-uhd{display:none}
+.largeimg .directlink-icon-uhd{display:none}
 .smallimg .directlink-icon-large {display:none}
 .smallimg .directlink-icon-uhd {display:none}
 .similar .directlink-icon{display:none}
