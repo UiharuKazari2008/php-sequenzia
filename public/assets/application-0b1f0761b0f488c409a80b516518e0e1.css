@@ -725,9 +725,12 @@ a.directlink:hover>.directlink-info{display:none}
 .has-parent .directlink-icon{display:none}
 .flagged .directlink-icon{display:none}
 .pending .directlink-icon{display:none}
-.extremeimg .directlink-icon-small .directlink-icon-large{display:none}
-.largeimg .directlink-icon-small .directlink-icon-uhd{display:none}
-.smallimg .directlink-icon-large .directlink-icon-uhd{display:none}
+.extremeimg .directlink-icon-small {display:none}
+.extremeimg .directlink-icon-large{display:none}
+.largeimg .directlink-icon-small {display:none}
+.largeimg.directlink-icon-uhd{display:none}
+.smallimg .directlink-icon-large {display:none}
+.smallimg .directlink-icon-uhd {display:none}
 .similar .directlink-icon{display:none}
 .top-corner-float{background:#222;border:solid #000 2px;padding:6px;position:fixed;right:2px;top:2px;z-index:5;font-size: 12px}
 .post-hover{background:#222;border:2px solid #000;max-width:30em;min-width:20em;padding:2px;position:absolute;z-index:2}
