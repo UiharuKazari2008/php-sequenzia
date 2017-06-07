@@ -1391,11 +1391,6 @@ a.directlink:hover > .directlink-info {
 .pending-display { display: none; height: 16px; width: 14px; }
 .pending .pending-display { display: inline; }
 
-.has-children .directlink-icon { display: none; }
-.has-parent .directlink-icon { display: none; }
-.flagged .directlink-icon { display: none; }
-.pending .directlink-icon { display: none; }
-
 .extremeimg .directlink-icon-small { display: none; }
 .extremeimg .directlink-icon-large { display: none; }
 

@@ -3407,7 +3407,7 @@ padding-left:20px;
 padding-bottom:10px;
 }
 
-.ui-helper-hidden,.ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle,span.plid,a.directlink:hover>.directlink-icon,a.directlink:hover>.directlink-info,.has-children .directlink-icon,.has-parent .directlink-icon,.flagged .directlink-icon,.pending .directlink-icon,.largeimg .directlink-icon-small .directlink-icon-uhd,.extremeimg .directlink-icon-large .directlink-icon-small,.smallimg .directlink-icon-large .directlink-icon-uhd,.similar .directlink-icon,.score>span,.post-info .standard-vote-widget .vote-up-block,.vote-popup-container .vote-desc,.vote-popup-container .vote-up-block,.vote-popup-container .vote-up-block-anonymous,.post-info .post-frames.no-frames,div#main-menu .forum-items-start,div#main-menu #has-mail-notice {
+.ui-helper-hidden,.ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle,span.plid,a.directlink:hover>.directlink-icon,a.directlink:hover>.directlink-info,.largeimg .directlink-icon-small .directlink-icon-uhd,.extremeimg .directlink-icon-large .directlink-icon-small,.smallimg .directlink-icon-large .directlink-icon-uhd,.similar .directlink-icon,.score>span,.post-info .standard-vote-widget .vote-up-block,.vote-popup-container .vote-desc,.vote-popup-container .vote-up-block,.vote-popup-container .vote-up-block-anonymous,.post-info .post-frames.no-frames,div#main-menu .forum-items-start,div#main-menu #has-mail-notice {
 display:none;
 }
 
