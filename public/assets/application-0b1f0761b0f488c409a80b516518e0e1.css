@@ -713,13 +713,13 @@ a.directlink>span.directlink-res{color:#982524;display:none;margin:0;padding:0;v
 a.directlink:hover>span.directlink-res{display:inline}
 a.directlink:hover>.directlink-icon{display:none}
 a.directlink:hover>.directlink-info{display:none}
-.parent-display{display:none;height:16px;width:72px}
+.parent-display{display:none}
 .has-children .parent-display{display:inline}
-.child-display{display:none;height:16px;width:72px}
+.child-display{display:none}
 .has-parent .child-display{display:inline}
-.flagged-display{display:none;height:16px;width:72px}
+.flagged-display{display:none}
 .flagged .flagged-display{display:inline}
-.pending-display{display:none;height:16px;width:72px}
+.pending-display{display:none}
 .pending .pending-display{display:inline}
 .extremeimg .directlink-icon-small {display:none}
 .extremeimg .directlink-icon-large{display:none}
