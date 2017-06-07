@@ -87,6 +87,7 @@ class PostHelper extends Rails\ActionView\Helper
 			<img class="directlink-icon file-type-png" src="/images/type-png.gif" alt="">
 			<img class="directlink-icon file-type-gif" src="/images/type-gif.gif" alt="">
 			<img class="directlink-icon file-type-mp4" src="/images/type-mp4.gif" alt="">
+			<img class="directlink-icon file-type-webm" src="/images/type-webm.gif" alt="">
 			<img class="directlink-icon file-type-flv" src="/images/type-flv.gif" alt="">
 			<img class="directlink-icon image-rating-s" src="/images/rate-s.gif" alt="">
 			<img class="directlink-icon image-rating-q" src="/images/rate-q.gif" alt="">
@@ -116,6 +117,8 @@ class PostHelper extends Rails\ActionView\Helper
 			$ddl_class .= " file-flv";
 		if ($post->file_ext == "mp4")
 			$ddl_class .= " file-mp4";
+		if ($post->file_ext == "webm")
+			$ddl_class .= " file-webm";
 		
 		if ($post->rating == "s")
 			$ddl_class .= " rating-s";

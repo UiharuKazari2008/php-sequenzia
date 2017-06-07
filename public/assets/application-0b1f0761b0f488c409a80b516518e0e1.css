@@ -734,11 +734,12 @@ a.directlink:hover>.directlink-info{display:none}
 .rating-e .image-rating-s,.rating-e .image-rating-q { display: none; }
 .rating-q .image-rating-s,.rating-q .image-rating-e { display: none; }
 .rating-s .image-rating-q,.rating-s .image-rating-e { display: none; }
-.file-jpg .file-type-png,.file-jpg .file-type-gif,.file-jpg .file-type-mp4,.file-jpg .file-type-flv  { display: none; }
-.file-png .file-type-jpg,.file-png .file-type-gif,.file-png .file-type-mp4,.file-png .file-type-flv  { display: none; }
-.file-gif .file-type-jpg,.file-gif .file-type-png,.file-gif .file-type-mp4,.file-gif .file-type-flv  { display: none; }
-.file-mp4 .file-type-jpg,.file-mp4 .file-type-png,.file-mp4 .file-type-gif,.file-mp4 .file-type-flv  { display: none; }
-.file-flv .file-type-jpg,.file-flv .file-type-png,.file-flv .file-type-gif,.file-flv .file-type-mp4  { display: none; }
+.file-jpg .file-type-png,.file-jpg .file-type-gif,.file-jpg .file-type-mp4,.file-jpg .file-type-flv,.file-jpg .file-type-webm { display: none; }
+.file-png .file-type-jpg,.file-png .file-type-gif,.file-png .file-type-mp4,.file-png .file-type-flv,.file-png .file-type-webm  { display: none; }
+.file-gif .file-type-jpg,.file-gif .file-type-png,.file-gif .file-type-mp4,.file-gif .file-type-flv,.file-gif .file-type-webm  { display: none; }
+.file-mp4 .file-type-jpg,.file-mp4 .file-type-png,.file-mp4 .file-type-gif,.file-mp4 .file-type-flv,.file-mp4 .file-type-webm  { display: none; }
+.file-flv .file-type-jpg,.file-flv .file-type-png,.file-flv .file-type-gif,.file-flv .file-type-mp4,.file-flv .file-type-webm  { display: none; }
+.file-webm .file-type-jpg,.file-flv .file-type-png,.file-flv .file-type-gif,.file-flv .file-type-mp4,.file-flv .file-type-flv  { display: none; }
 .similar .directlink-icon{display:none}
 .top-corner-float{background:#222;border:solid #000 2px;padding:6px;position:fixed;right:2px;top:2px;z-index:5;font-size: 12px}
 .post-hover{background:#222;border:2px solid #000;max-width:30em;min-width:20em;padding:2px;position:absolute;z-index:2}
