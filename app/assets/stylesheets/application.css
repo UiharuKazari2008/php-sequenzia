@@ -1411,8 +1411,6 @@ a.directlink:hover > .directlink-info {
 .rating-q .image-rating-s,.rating-q .image-rating-e { display: none; }
 .rating-s .image-rating-q,.rating-s .image-rating-e { display: none; }
 
-.similar .directlink-icon { display: none; }
-
 .top-corner-float {
 	position: fixed;
 	background: #222;

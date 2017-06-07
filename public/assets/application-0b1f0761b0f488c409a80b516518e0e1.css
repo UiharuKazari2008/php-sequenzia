@@ -721,10 +721,6 @@ a.directlink:hover>.directlink-info{display:none}
 .flagged .flagged-display{display:inline}
 .pending-display{display:none;height:16px;width:72px}
 .pending .pending-display{display:inline}
-.has-children .directlink-icon{display:none}
-.has-parent .directlink-icon{display:none}
-.flagged .directlink-icon{display:none}
-.pending .directlink-icon{display:none}
 .extremeimg .directlink-icon-small {display:none}
 .extremeimg .directlink-icon-large{display:none}
 .largeimg .directlink-icon-small {display:none}
@@ -740,7 +736,6 @@ a.directlink:hover>.directlink-info{display:none}
 .file-mp4 .file-type-jpg,.file-mp4 .file-type-png,.file-mp4 .file-type-gif,.file-mp4 .file-type-flv,.file-mp4 .file-type-webm  { display: none; }
 .file-flv .file-type-jpg,.file-flv .file-type-png,.file-flv .file-type-gif,.file-flv .file-type-mp4,.file-flv .file-type-webm  { display: none; }
 .file-webm .file-type-jpg,.file-webm .file-type-png,.file-webm .file-type-gif,.file-webm .file-type-mp4,.file-webm .file-type-flv  { display: none; }
-.similar .directlink-icon{display:none}
 .top-corner-float{background:#222;border:solid #000 2px;padding:6px;position:fixed;right:2px;top:2px;z-index:5;font-size: 12px}
 .post-hover{background:#222;border:2px solid #000;max-width:30em;min-width:20em;padding:2px;position:absolute;z-index:2}
 .post-hover-overlay{position:absolute;z-index:2}
