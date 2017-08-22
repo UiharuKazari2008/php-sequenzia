@@ -1,6 +1,7 @@
 <div id="static-index">
   <h1 id="static-index-header"><?= $this->linkTo(CONFIG()->app_name, "/") ?></h1>
   <div style="margin-bottom: 1em;" id="links">
+	<?= $this->linkTo($this->t('.posts._'), ['controller' => 'post', 'action' => 'index', 'tags' => "*"]) ?> 
     <?= $this->linkTo($this->t('static_posts'), 'post#index', array('title' => $this->t('static_posts_text'))) ?>
     <?= $this->linkTo($this->t('static_comments'), 'comment#index', array('title' => $this->t('static_comments_text'))) ?>
     <?= $this->linkTo($this->t('static_tags'), 'tag#index', array('title' => $this->t('static_tags_text'))) ?>

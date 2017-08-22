@@ -28,7 +28,7 @@
           <?php endif ?>
         </ul>
       </li>
-      <li class="post"><?= $this->linkTo($this->t('.posts._'), ['controller' => 'post', 'action' => 'index', 'tags' => "*"]) ?>
+      <li class="post"><?= $this->linkTo($this->t('.posts._'), ['controller' => 'post', 'action' => 'index', 'tags' => "*"]) ?> /*YK: Requests * to remove gaps on index page due to blacklists */
         <?= $this->linkTo('■', '#', ['class' => 'submenu-button']) ?>
         <ul class="search-box">
           <li>

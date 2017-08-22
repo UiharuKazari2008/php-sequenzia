@@ -6,7 +6,7 @@
 <?php endif ?>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
   <title><?= $this->html_title() ?></title>
-  <meta name="description" content="yande.re - A Danbooru focusing on High Resolution Anime Scans, Ecchi Scans, Hentai Scans, Moe Scans, and Bishoujo Scans; unlimited downloads. ">
+  <meta name="description" content="Sequenzia - A Danbooru focusing on High Resolution Anime Scans, Ecchi Scans, Hentai Scans, Moe Scans, and Bishoujo Scans; unlimited downloads. ">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="top" title="<?= CONFIG()->app_name ?>" href="/">
   <?= $this->tag('link', ['rel' => 'canonical', 'href' => !empty($this->canonical_url) ? $this->canonical_url : $this->urlFor(array_merge($this->params()->toArray(), ['only_path' => false]))]) ?>
