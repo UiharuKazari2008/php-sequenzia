@@ -113,7 +113,7 @@ class PostHelper extends Rails\ActionView\Helper
 			$ddl_class .= " file-png";
 		if ($post->file_ext == "gif")
 			$ddl_class .= " file-gif";
-		if ($post->file_ext == "flv")
+		if ($post->file_ext == "flv" || $post->file_ext == "swf")
 			$ddl_class .= " file-flv";
 		if ($post->file_ext == "mp4")
 			$ddl_class .= " file-mp4";
