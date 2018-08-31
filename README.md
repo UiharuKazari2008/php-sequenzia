@@ -29,7 +29,7 @@ Very big thanks to Parziphal for his efforts in mantaing this project before we 
 For an explained, step-by-step guide, please check the following guides: 
 
 * [How to Install (Decentralized)](https://acr.moe/index.php/Build_a_Sequenzia_Booru) - Multiple Servers and with Off-Server Storage and Database
-* [How to Install (Centralized)](https://code.acr.moe/kazari/myimouto/wikis/ubuntu-centralized-installation-guide) - All-In-One Setup
+* [How to Install (Centralized)](https://code.acr.moe/kazari/sequenzia/wikis/ubuntu-centralized-installation-guide) - All-In-One Setup
 
 Otherwise, here's the quick guide for advanced users:
 
