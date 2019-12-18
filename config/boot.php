@@ -14,7 +14,7 @@ define('RAILS_ROOT', dirname(__DIR__));
 /**
  * Path to Rails.
  */
-$railsPath = __DIR__ . '/../vendor/railsphp/railsphp/lib/Rails';
+$railsPath = dirname(__DIR__, 1) . '/vendor/railsphp/railsphp/lib/Rails';
 
 /**
  * Load and initialize Rails.
@@ -25,5 +25,5 @@ Rails::initialize();
 /**
  * Load and initialize application.
  */
-require __DIR__ . '/application.php';
+require dirname(__DIR__) . '/config/application.php';
 MyImouto\Application::initialize();

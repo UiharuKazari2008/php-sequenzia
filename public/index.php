@@ -1,3 +1,3 @@
 ﻿<?php
-require __DIR__ . '/../config/boot.php';
+require dirname(__DIR__, 1) . '/config/boot.php';
 MyImouto\Application::dispatchRequest();
