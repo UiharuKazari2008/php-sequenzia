@@ -1,11 +1,11 @@
-![Logo](https://code.acr.moe/kazari/sequenzia/raw/master/public/images/logo.png "Logo")
+![Logo](https://github.com/UiharuKazari2008/php-sequenzia/raw/master/public/images/logo.png "Logo")
 # Sequenzia LTS (MyImouto LTS - ACR Rev.)
 
-MyImouto is a clone of [Moebooru](https://github.com/moebooru/moebooru) for PHP and MySQL. In order for this clone to be as exact as possible, MyImouto uses a custom framework that is based on Ruby on Rails, thus the code from Moebooru was transcribed to PHP with some small modifications to fit the target language and framework.
+MyImouto is a clone of [Moebooru](https://github.com/UiharuKazari2008/myimouto) for PHP and MySQL. In order for this clone to be as exact as possible, MyImouto uses a custom framework that is based on Ruby on Rails, thus the code from Moebooru was transcribed to PHP with some small modifications to fit the target language and framework.
 
 MyImouto development stopped around 2014. By then, the port was mostly complete, with some bugs here and there. For more information about its features, changes and additions compared to Moebooru, please refer to the [About MyImouto](https://github.com/myimouto/myimouto/wiki/About-MyImouto) wiki. 
 
-This Project has now been taken in by ACR to support the LTS project [Sequenzia Project](https://acr.moe/index.php?title=Sequenzia_Project). Its completely open for remixing and branching. Some things are moddifed to fit our setup so 
+This Project has now been taken in by ACR to support the LTS project Sequenzia Project. Its completely open for remixing and branching. Some things are moddifed to fit our setup so 
 
 Very big thanks to Parziphal for his efforts in mantaing this project before we picked it up, his efforts are one of the reason this still works today!
 
@@ -28,8 +28,8 @@ Very big thanks to Parziphal for his efforts in mantaing this project before we 
 
 For an explained, step-by-step guide, please check the following guides: 
 
-* [How to Install (Decentralized)](https://acr.moe/index.php/Build_a_Sequenzia_Booru) - Multiple Servers and with Off-Server Storage and Database
-* [How to Install (Centralized)](https://code.acr.moe/kazari/sequenzia/wikis/ubuntu-centralized-installation-guide) - All-In-One Setup
+* [How to Install (Centralized)](https://github.com/UiharuKazari2008/php-sequenzia/wiki/Installation) - All-In-One Setup
+* [Docker Compose](https://github.com/UiharuKazari2008/sequenzia-legacy-compose) Installer to efforetly install and run Sequenzia LTS
 
 Otherwise, here's the quick guide for advanced users:
 
